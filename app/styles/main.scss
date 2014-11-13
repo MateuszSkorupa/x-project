@@ -1,7 +1,12 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 // bower:scss
-@import "bootstrap-sass-official/assets/stylesheets/bootstrap.scss";
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
+//library
+@import "library/_stylesheet";
+// partials
+@import "partials/_base";
+@import "partials/_typography";
 
 .browsehappy {
   margin: 0.2em 0;
@@ -12,6 +17,8 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 /* Space out content a bit */
 body {
+  background: $bg-col;
+  color: $tx-col;
   padding-top: 20px;
   padding-bottom: 20px;
 }
