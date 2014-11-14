@@ -3,3 +3,24 @@
 body {
 	font-family: 'SourceCodeProSemibold', Helvetica, sans-serif;
 }
+body > nav {
+	text-transform: uppercase;
+}
+.navbar-default .navbar-brand {
+	.site-title {
+		float: left;
+		margin-left: 5px;
+			h1 {
+			font-size: 18px;
+		}
+		span {
+			font-size: 14px;
+			float: left;
+		}
+	}
+	
+}
+.no-v-space {
+	margin: 0;
+	line-height: 0.9;
+}

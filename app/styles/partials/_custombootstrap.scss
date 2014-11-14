@@ -1,0 +1,22 @@
+/* custom bootstrap variables*/
+$body-bg:               #1d181f;
+$text-color:            #ff5335;
+
+$link-color:            #ff5335;
+
+//== Navbar
+//
+//##
+
+// Basics of a navbar
+$navbar-height:                    60px;
+$navbar-default-color:              #ff5335;
+$navbar-default-bg:                #1d181f;
+$navbar-default-border:            #ff5335;
+// Navbar links
+$navbar-default-link-color:                #ff5335;
+$navbar-default-link-hover-color:          #ff5335;
+$navbar-default-link-hover-bg:             transparent !default;
+$navbar-default-link-active-color:         #ff5335;
+$navbar-default-link-active-bg:            darken($navbar-default-bg, 6.5%) !default;
+$navbar-default-link-disabled-color:       #ccc !default;

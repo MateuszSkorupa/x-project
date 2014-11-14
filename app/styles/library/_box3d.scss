@@ -1,0 +1,92 @@
+// http://codepen.io/dehash/pen/LwIyE
+.box3d {
+  width: 40px;
+  height: 40px;
+  float: left;
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+}
+
+.box3d div {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: 1px solid #ff5335;
+  transform-origin: 50% 50% -15px;
+}
+
+.p1 {
+  transform: perspective(600px) rotateX(0deg) rotateY(90deg) rotateZ(0deg);
+  animation: spin1 10s infinite linear;
+}
+
+.p2 {
+  animation: spin2 10s infinite linear;
+}
+
+.p3 {
+  animation: spin3 10s infinite linear;
+}
+
+.p4 {
+  animation: spin4 10s infinite linear;
+}
+
+.p5 {
+  animation: spin5 10s infinite linear;
+}
+
+.p6 {
+  animation: spin6 10s infinite linear;
+}
+
+/* for Safari and Chrome */
+/* for IE10 and Firefox */
+@keyframes spin1 {
+  to {
+    transform: perspective(600px) rotateX(360deg) rotateY(450deg) rotateZ(0deg);
+  }
+}
+@keyframes spin2 {
+  0% {
+    transform: perspective(600px) rotateX(0deg) rotateY(270deg) rotateZ(0deg);
+  }
+  100% {
+    transform: perspective(600px) rotateX(360deg) rotateY(630deg) rotateZ(0deg);
+  }
+}
+@keyframes spin3 {
+  0% {
+    transform: perspective(600px) rotateX(90deg) rotateY(0deg) rotateZ(0deg);
+  }
+  100% {
+    transform: perspective(600px) rotateX(450deg) rotateY(0deg) rotateZ(-360deg);
+  }
+}
+@keyframes spin4 {
+  0% {
+    transform: perspective(600px) rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
+  }
+  100% {
+    transform: perspective(600px) rotateX(270deg) rotateY(0deg) rotateZ(360deg);
+  }
+}
+@keyframes spin5 {
+  0% {
+    transform: perspective(600px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  100% {
+    transform: perspective(600px) rotateX(360deg) rotateY(360deg) rotateZ(0deg);
+  }
+}
+@keyframes spin6 {
+  0% {
+    transform: perspective(600px) rotateX(0deg) rotateY(180deg) rotateZ(0deg);
+  }
+  100% {
+    transform: perspective(600px) rotateX(360deg) rotateY(540deg) rotateZ(0deg);
+  }
+}
