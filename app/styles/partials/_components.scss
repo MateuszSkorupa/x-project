@@ -14,6 +14,7 @@ body {
 /*menu*/
 .navigation {
 	float: right;
+	line-height: 1.5;
 	ul {
 		position: relative;
 		list-style: none;
@@ -23,6 +24,12 @@ body {
 			a {
 				float: left;
 				padding: 20px 15px;
+				text-decoration: none;
+				@include transition-property(all);
+  				@include transition-duration(0.550s);
+				&.current {
+					color: #fff;
+				}
 			}
 		}
 	}
@@ -31,7 +38,26 @@ body {
 	}
 	.hover-menu {
 		position: absolute;
-		top: 50px;
+		top: 61px;
 		background: $bg-col;
 	}
+	#menu {
+		overflow: hidden;
+		position: relative;
+		z-index: 10;
+	}
 }
+
+/*magic line*/
+#magic-line {
+		height: 100%;
+		width: 0px;
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: $tx-col;
+		@include transition-property(all);
+  		@include transition-duration(0.250s);
+  		z-index: -1;
+	}
