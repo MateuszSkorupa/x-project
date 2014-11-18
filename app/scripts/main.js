@@ -1,4 +1,4 @@
-//górne menu animacja
+// Menu animation
 function mLine() {
    var mainNav = document.getElementById("menu");
    var span = document.createElement("span");
@@ -16,10 +16,10 @@ function mLine() {
 
       var OldLeftPos = $('#menu').find('li.active').find('a').position().left;
       var OldWidth = $('#menu').find('li.active').width();
-      var curItem = $('#menu').find('li.active').find('a');
+      var curItem = $('#menu > li.active > a');
       curItem.addClass("current");
 
-    $("#menu li a").hover(function() {
+    $("#menu > li > a").hover(function() {
             el = $(this);
             
             leftPos = el.position().left;
@@ -32,7 +32,7 @@ function mLine() {
             if(curItem.hasClass("current") === true){
               curItem.removeClass("current");
             }else{
-              curItem.addClass("current")
+              curItem.addClass("current");
             }
         }, function() {
               $magicLine.stop().animate({
@@ -43,11 +43,11 @@ function mLine() {
               if(curItem.hasClass("current") === true){
               curItem.removeClass("current");
             }else{
-              curItem.addClass("current")
+              curItem.addClass("current");
             }
         });  
   }else{
-    $("#menu li a").hover(function() {
+    $("#menu > li > a").hover(function() {
             el = $(this);
             
             leftPos = el.position().left;
@@ -64,11 +64,77 @@ function mLine() {
               
         });
   }
-   
-   
+      
 }
+
+function svGrund() {
+  // Short script to encode our SVG in base64
+  // This can be reversed using window.atob('base64')
+  var bgSvg = document.getElementById('bgsvg');
+  var svg = document.getElementsByTagName('svg')[0];
+
+  // Convert the SVG node to HTML
+  var div = document.createElement('div');
+  div.appendChild(svg.cloneNode(true));
+
+  // Encode the SVG as base64
+  var b64 = 'data:image/svg+xml;base64,'+window.btoa(div.innerHTML);
+  var url = 'url("' + b64 + '")';
+
+  bgSvg.style.backgroundImage = url;
+}
+
+// Parallax effect
+$(function(){
+
+  var $container = $('.plx-w');
+  var $divs = $container.find('.plx-item');
+  var thingBeingScrolled = document.body;
+
+  var plxWindowHeight = $divs.eq(0).closest('.plx-w').height();
+  var diffHeight = $divs.eq(0).height() - plxWindowHeight;
+
+  var i,len,div,plxWindow,offset,scroll,top;
+
+   var render = function(){
+
+      // thing were scrolling
+      top = thingBeingScrolled.scrollTop;
+
+      // loop through divs
+
+      for(i=0, len=$divs.length; i<len; i++){
+
+        // get one div
+        div = $divs[i];
+
+        // get the parent parallax window
+        plxWindow = div.parentNode;
+
+        // calculate the offsetTOP of the div
+        offset = $(div).offset().top;
+
+        // calculate the amount to scroll
+        scroll = Math.round(((top - offset) / plxWindowHeight) * diffHeight);
+
+        // apply the scroll amount
+        div.style.webkitTransform = "translate3d(0px,"+(scroll*1.5)+"px,0px)";
+      }
+   };
+
+
+   $(function loop(){
+      requestAnimationFrame(loop);
+      render();
+   }); 
+}); 
+
+
 
 
 $(document).ready(function () {
   mLine();
+  svGrund();
 });
+
+
