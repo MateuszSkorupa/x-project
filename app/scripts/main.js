@@ -85,56 +85,91 @@ function svGrund() {
 }
 
 // Parallax effect
-$(function(){
 
-  var $container = $('.plx-w');
+(function($) {
+
+  var $container = $('body');
   var $divs = $container.find('.plx-item');
-  var thingBeingScrolled = document.body;
-
+  var thingBeingScrolled = $(window);
   var plxWindowHeight = $divs.eq(0).closest('.plx-w').height();
   var diffHeight = $divs.eq(0).height() - plxWindowHeight;
+  var len = $divs.length;
+  
+  var i,div,offset,scroll,top,transform;
 
-  var i,len,div,plxWindow,offset,scroll,top;
+  // cache initial offsets
+  // var offsets = [];
+  // $divs.each(function(i) {
+  //   offsets[i] = $(this).offset();
+  // });
 
-   var render = function(){
+  var offsets = $divs.get().map(function(div,d) {
+    return $(div).offset();
+  });
 
-      // thing were scrolling
-      top = thingBeingScrolled.scrollTop;
+  var render = function() {
 
-      // loop through divs
+      top = thingBeingScrolled.scrollTop();
 
-      for(i=0, len=$divs.length; i<len; i++){
+      for(i=0;i<len;i++) {
 
-        // get one div
+        // get the DOM object
         div = $divs[i];
 
-        // get the parent parallax window
-        plxWindow = div.parentNode;
+        // our offset
+        offset = top - offsets[i].top;
 
-        // calculate the offsetTOP of the div
-        offset = $(div).offset().top;
+        // our transform string
+        scroll = ~~(offset / plxWindowHeight * diffHeight);
 
-        // calculate the amount to scroll
-        scroll = Math.round(((top - offset) / plxWindowHeight) * diffHeight);
+        // div.style.marginTop = scroll;
 
-        // apply the scroll amount
-        div.style.webkitTransform = "translate3d(0px,"+(scroll*1.5)+"px,0px)";
+        transform = 'translate3d(0px, ' + scroll + 'px, 0px)';
+
+        // apply
+        div.style.webkitTransform = transform;
+        div.style.MozTransform = transform;
+        div.style.msTransform = transform;
+        div.style.OTransform = transform;
+        div.style.transform = transform;
+
       }
-   };
+  };
 
-
-   $(function loop(){
+  (function loop(){
       requestAnimationFrame(loop);
       render();
-   }); 
-}); 
+  })();
 
+   (function() {
+    var lastTime = 0;
+    var vendors = ['webkit', 'moz'];
+    for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+        window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+        window.cancelAnimationFrame =
+          window[vendors[x]+'CancelAnimationFrame'] || window[vendors[x]+'CancelRequestAnimationFrame'];
+    }
 
+    if (!window.requestAnimationFrame)
+        window.requestAnimationFrame = function(callback, element) {
+            var currTime = new Date().getTime();
+            var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+            var id = window.setTimeout(function() { callback(currTime + timeToCall); },
+              timeToCall);
+            lastTime = currTime + timeToCall;
+            return id;
+        };
 
+    if (!window.cancelAnimationFrame)
+        window.cancelAnimationFrame = function(id) {
+            clearTimeout(id);
+        };
+  })();
+
+})(jQuery);
 
 $(document).ready(function () {
   mLine();
   svGrund();
 });
-
 
