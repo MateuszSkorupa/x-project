@@ -95,8 +95,7 @@ body {
 		top: 0;
 		left: 0;
 		background: $tx-col;
-		@include transition-property(all);
-  		@include transition-duration(0.250s);
+		@include transition(width 0.2s, left 0.3s);
   		z-index: -1;
 	}
 

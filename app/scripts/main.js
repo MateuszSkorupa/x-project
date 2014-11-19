@@ -1,6 +1,6 @@
 // Menu animation
 function mLine() {
-   var mainNav = document.getElementById("menu");
+   var mainNav = document.getElementById('menu');
    var span = document.createElement("span");
    var active = $('#menu li');
 
@@ -8,10 +8,11 @@ function mLine() {
    mainNav.appendChild(span);
 
    var $magicLine = $("#magic-line");
+   var el,leftPos,newWidth;
 
    if(active.hasClass("active") === true){
       $magicLine.width($(".active").width())
-      .css("left", $(".active").position().left);
+      .css("left", ($(".active").position()).left);
 
 
       var OldLeftPos = $('#menu').find('li.active').find('a').position().left;
@@ -28,7 +29,7 @@ function mLine() {
                 left: leftPos,
                 width: newWidth
             }, "linear");
-            // el.addClass("current");
+           
             if(curItem.hasClass("current") === true){
               curItem.removeClass("current");
             }else{
@@ -39,7 +40,7 @@ function mLine() {
                 left: OldLeftPos,
                 width: OldWidth
             }, "linear");
-              // el.removeClass("current");
+             
               if(curItem.hasClass("current") === true){
               curItem.removeClass("current");
             }else{
@@ -67,8 +68,9 @@ function mLine() {
       
 }
 
+// Short script to encode our SVG in base64
 function svGrund() {
-  // Short script to encode our SVG in base64
+  
   // This can be reversed using window.atob('base64')
   var bgSvg = document.getElementById('bgsvg');
   var svg = document.getElementsByTagName('svg')[0];
@@ -85,7 +87,6 @@ function svGrund() {
 }
 
 // Parallax effect
-
 (function($) {
 
   var $container = $('body');
@@ -96,12 +97,6 @@ function svGrund() {
   var len = $divs.length;
   
   var i,div,offset,scroll,top,transform;
-
-  // cache initial offsets
-  // var offsets = [];
-  // $divs.each(function(i) {
-  //   offsets[i] = $(this).offset();
-  // });
 
   var offsets = $divs.get().map(function(div,d) {
     return $(div).offset();
@@ -121,9 +116,6 @@ function svGrund() {
 
         // our transform string
         scroll = ~~(offset / plxWindowHeight * diffHeight);
-
-        // div.style.marginTop = scroll;
-
         transform = 'translate3d(0px, ' + scroll + 'px, 0px)';
 
         // apply
@@ -172,4 +164,29 @@ $(document).ready(function () {
   mLine();
   svGrund();
 });
+
+// mouse wheel easing
+if (window.addEventListener) window.addEventListener('DOMMouseScroll', wheel, false);
+window.onmousewheel = document.onmousewheel = wheel;
+ 
+function wheel(event) {
+    var delta = 0;
+    if (event.wheelDelta) delta = event.wheelDelta / 120;
+    else if (event.detail) delta = -event.detail / 3;
+ 
+    handle(delta);
+    if (event.preventDefault) event.preventDefault();
+    event.returnValue = false;
+}
+ 
+function handle(delta) {
+    var time = 1000; // delay time
+    var distance = 120; // delta point 
+    // Dom where it will apply 
+    $('html, body').stop().animate({
+        scrollTop: $(window).scrollTop() - (distance * delta)
+    }, time );
+}
+
+
 
