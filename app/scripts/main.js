@@ -1,26 +1,26 @@
 // Menu animation
 function mLine() {
    var mainNav = document.getElementById('menu');
-   var span = document.createElement("span");
+   var span = document.createElement('span');
    var active = $('#menu li');
 
-   span.setAttribute("id", "magic-line");
+   span.setAttribute('id', 'magic-line');
    mainNav.appendChild(span);
 
-   var $magicLine = $("#magic-line");
+   var $magicLine = $('#magic-line');
    var el,leftPos,newWidth;
 
-   if(active.hasClass("active") === true){
-      $magicLine.width($(".active").width())
-      .css("left", ($(".active").position()).left);
+   if(active.hasClass('active') === true){
+      $magicLine.width($('.active').width())
+      .css('left', ($('.active').position()).left);
 
 
       var OldLeftPos = $('#menu').find('li.active').find('a').position().left;
       var OldWidth = $('#menu').find('li.active').width();
       var curItem = $('#menu > li.active > a');
-      curItem.addClass("current");
+      curItem.addClass('current');
 
-    $("#menu > li > a").hover(function() {
+    $('#menu > li > a').hover(function() {
             el = $(this);
             
             leftPos = el.position().left;
@@ -28,27 +28,27 @@ function mLine() {
             $magicLine.stop().animate({
                 left: leftPos,
                 width: newWidth
-            }, "linear");
+            }, 'linear');
            
-            if(curItem.hasClass("current") === true){
-              curItem.removeClass("current");
+            if(curItem.hasClass('current') === true){
+              curItem.removeClass('current');
             }else{
-              curItem.addClass("current");
+              curItem.addClass('current');
             }
         }, function() {
               $magicLine.stop().animate({
                 left: OldLeftPos,
                 width: OldWidth
-            }, "linear");
+            }, 'linear');
              
-              if(curItem.hasClass("current") === true){
-              curItem.removeClass("current");
+              if(curItem.hasClass('current') === true){
+              curItem.removeClass('current');
             }else{
-              curItem.addClass("current");
+              curItem.addClass('current');
             }
         });  
   }else{
-    $("#menu > li > a").hover(function() {
+    $('#menu > li > a').hover(function() {
             el = $(this);
             
             leftPos = el.position().left;
@@ -57,11 +57,11 @@ function mLine() {
                 left: leftPos,
                 width: newWidth,
                 opacity: 1.0
-            }, "linear");
+            }, 'linear');
         }, function() {
               $magicLine.stop().animate({
                 opacity: 0.0
-            }, "linear");
+            }, 'linear');
               
         });
   }
@@ -160,10 +160,7 @@ function svGrund() {
 
 })(jQuery);
 
-$(document).ready(function () {
-  mLine();
-  svGrund();
-});
+
 
 // mouse wheel easing
 if (window.addEventListener) window.addEventListener('DOMMouseScroll', wheel, false);
@@ -180,13 +177,42 @@ function wheel(event) {
 }
  
 function handle(delta) {
-    var time = 1000; // delay time
+    var time = 500; // delay time
     var distance = 120; // delta point 
     // Dom where it will apply 
     $('html, body').stop().animate({
         scrollTop: $(window).scrollTop() - (distance * delta)
     }, time );
 }
+
+// trigger functions
+$(document).ready(function () {
+  mLine();
+  svGrund();
+
+  $('#scene').parallax({
+     invertX: false,
+      invertY: false
+  });
+
+  // scroll to point animation trigger
+  $(window).scroll(function(event) {
+  var box = $('.direction');
+  var y = box.offset().top;
+  var x = $(this).scrollTop();
+
+  // height from box to window top 
+  var z = y - x;
+
+  if (z <= 400 ) {
+
+$('.direction').addClass('difrf-backg');
+  }else{
+    $('.direction').removeClass('difrf-backg');
+  }
+  });
+});
+ 
 
 
 

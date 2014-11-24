@@ -1,7 +1,64 @@
 /* variables */
 $bg-col : #1d181f;
 $tx-col : #ff5335;
+$nx-col : #3a424c;
 
 svg {
   display: none;
 }
+
+/*animations*/
+@-webkit-keyframes spinright 
+{
+    0%{transform: rotate(0deg); -ms-transform: rotate(0deg); -webkit-transform:rotate(0deg);}
+    100%{transform: rotate(360deg); -ms-transform: rotate(360deg); -webkit-transform:rotate(360deg);}
+} 
+@keyframes spinright 
+{
+    0%{transform: rotate(0deg); -ms-transform: rotate(0deg); -webkit-transform:rotate(0deg);}
+    100%{transform: rotate(360deg); -ms-transform: rotate(360deg); -webkit-transform:rotate(360deg);}
+}
+@-webkit-keyframes spinleft 
+{
+    0%{transform: rotate(0deg); -ms-transform: rotate(0deg); -webkit-transform:rotate(0deg);}
+    100%{transform: rotate(-360deg); -ms-transform: rotate(-360deg); -webkit-transform:rotate(-360deg);}
+}
+@keyframes spinleft 
+{
+     0%{transform: rotate(0deg); -ms-transform: rotate(0deg); -webkit-transform:rotate(0deg);}
+    100%{transform: rotate(-360deg); -ms-transform: rotate(-360deg); -webkit-transform:rotate(-360deg);}
+}
+
+@-webkit-keyframes bubblepopup
+{
+   0%{font-size: 0rem;}
+    6%{font-size: 2.5rem;}
+    11%{font-size: 1.4rem;}
+    16%{font-size: 2.5rem;}
+    70%{font-size: 2.5rem;}
+    71%{font-size: 0rem;}
+    100%{font-size: 0rem;}
+}
+@keyframes bubblepopup
+{
+   	0%{font-size: 0rem;}
+    6%{font-size: 2.5rem;}
+    11%{font-size: 1.4rem;}
+    16%{font-size: 2.5rem;}
+    70%{font-size: 2.5rem;}
+    71%{font-size: 0rem;}
+    100%{font-size: 0rem;}
+}
+
+@-webkit-keyframes jump
+{
+  	0%{top: 0;}
+    50%{top: 15px;}
+    100%{top: 0;}
+}  
+@keyframes jump
+{
+  	0%{top: 0;}
+    50%{top: 15px;}
+    100%{top: 0;}
+} 
