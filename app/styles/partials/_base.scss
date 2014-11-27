@@ -61,4 +61,17 @@ svg {
   	0%{top: 0;}
     50%{top: 15px;}
     100%{top: 0;}
-} 
+}
+
+@-webkit-keyframes clickor
+{
+    0%{background: $bg-col; color: $tx-col;}
+    50%{background: $tx-col; color: $bg-col;}
+    100%{background: $bg-col; color: $tx-col;}
+}  
+@keyframes clickor
+{
+    0%{background: $bg-col; color: $tx-col;}
+    50%{background: $tx-col; color: $bg-col;}
+    100%{background: $bg-col; color: $tx-col;}
+}

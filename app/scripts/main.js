@@ -185,10 +185,35 @@ function handle(delta) {
     }, time );
 }
 
+//info box
+function clickOrHover(){
+      var $front = $('div.inner.front');
+      var $clickNeon = $('click-or-hover');
+      
+      $front.hover(function(){
+        $(this).addClass('active');
+        $(this).parent().find('.click-or-hover').css({'display':'none'});
+      },function(){
+        $(this).removeClass('active');
+         $(this).parent().find('.click-or-hover').css({'display':'block'});
+      });
+
+      $front.click(
+        function(){
+          if($(this).hasClass('active') === true){
+            $(this).removeClass('active');
+            $(this).parent().find('.click-or-hover').css({'display':'block'});
+          }else{
+            $(this).addClass('active');
+            $(this).parent().find('.click-or-hover').css({'display':'none'});
+          }
+        });
+    }
 // trigger functions
 $(document).ready(function () {
   mLine();
   svGrund();
+  clickOrHover();
 
   $('#scene').parallax({
      invertX: false,
@@ -205,12 +230,12 @@ $(document).ready(function () {
   var z = y - x;
 
   if (z <= 400 ) {
-
-$('.direction').addClass('difrf-backg');
-  }else{
-    $('.direction').removeClass('difrf-backg');
-  }
+      $('.direction').addClass('deactivate');
+    }else{
+      $('.direction').removeClass('deactivate');
+    }
   });
+
 });
  
 
