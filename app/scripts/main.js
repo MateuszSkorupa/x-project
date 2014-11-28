@@ -73,6 +73,7 @@ function svGrund() {
   
   // This can be reversed using window.atob('base64')
   var bgSvg = document.getElementById('bgsvg');
+  var bgSvgnx = document.getElementById('bgsvgnx');
   var svg = document.getElementsByTagName('svg')[0];
 
   // Convert the SVG node to HTML
@@ -84,6 +85,7 @@ function svGrund() {
   var url = 'url("' + b64 + '")';
 
   bgSvg.style.backgroundImage = url;
+  bgSvgnx.style.backgroundImage = url;
 }
 
 // Parallax effect
@@ -188,24 +190,23 @@ function handle(delta) {
 //info box
 function clickOrHover(){
       var $front = $('div.inner.front');
-      var $clickNeon = $('click-or-hover');
       
       $front.hover(function(){
         $(this).addClass('active');
-        $(this).parent().find('.click-or-hover').css({'display':'none'});
+        $(this).parent().find('.click-or-hover').addClass('hidden');
       },function(){
         $(this).removeClass('active');
-         $(this).parent().find('.click-or-hover').css({'display':'block'});
+         $(this).parent().find('.click-or-hover').removeClass('hidden');
       });
 
       $front.click(
         function(){
           if($(this).hasClass('active') === true){
             $(this).removeClass('active');
-            $(this).parent().find('.click-or-hover').css({'display':'block'});
+             $(this).parent().find('.click-or-hover').removeClass('hidden');
           }else{
             $(this).addClass('active');
-            $(this).parent().find('.click-or-hover').css({'display':'none'});
+            $(this).parent().find('.click-or-hover').addClass('hidden');
           }
         });
     }
@@ -221,7 +222,7 @@ $(document).ready(function () {
   });
 
   // scroll to point animation trigger
-  $(window).scroll(function(event) {
+  $(window).scroll(function() {
   var box = $('.direction');
   var y = box.offset().top;
   var x = $(this).scrollTop();

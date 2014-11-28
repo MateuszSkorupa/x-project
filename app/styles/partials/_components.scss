@@ -19,6 +19,12 @@ body {
 .pos-point {
 	position: relative;
 }
+.go-left {
+	left: 5%;
+}
+.go-right {
+	right: 5%;
+}
 /*************************
 ************MENU**********
 *************************/
@@ -109,11 +115,22 @@ body {
 .border-b {
 	border-bottom: 1px solid $tx-col;
 }
+.border-t {
+	border-top: 1px solid $tx-col;
+}
 #bgsvg {
   position: absolute;
-  top: -40px; left: 0px;
+  top: -40px;
+  left: 0px;
   width: 100%;
   height: 500px;
+}
+#bgsvgnx {
+  position: absolute;
+  top: -80px;
+  left: 0px;
+  width: 100%;
+  height: 1500px;
 }
 #slider {
 	section {
@@ -322,7 +339,7 @@ body {
 	overflow: hidden;
 }
 .direction {
-	height: 170px;
+	height: 95px;
 	padding-top: 25px;
 	p {
 		text-align: center;
@@ -345,6 +362,65 @@ body {
 	}
 	
 }
+/* content */
+.plx-w {
+	&.archimedes {
+		height: 500px;
+		.plx-item {
+			position: relative;
+			height: 700px;
+			width: 100%;
+			top: -200px;
+			background: url(../images/archimedes.jpg) no-repeat;
+		}
+	}
+	&.design {
+		height: 500px;
+		.plx-item {
+			position: relative;
+			height: 700px;
+			width: 100%;
+			top: -200px;
+			background: url(../images/design.jpg) no-repeat;
+			background-size: cover;
+			background-position: center center; 
+		}
+	}
+	&.constructor {
+		height: 500px;
+		.plx-item {
+			position: relative;
+			height: 700px;
+			width: 100%;
+			top: -200px;
+			background: url(../images/constructor.jpg) no-repeat;
+			background-size: cover;
+			background-position: center 10%; 
+		}
+	}
+
+}
+.plx-w {
+	.txt {
+		position: absolute;
+		width: 60%;
+		top: 37%;
+		z-index: 1;
+		h3 {
+		position: relative;	
+		padding-left: 106px;
+		font-size: 48px;	
+		text-transform: uppercase;
+		span {
+			position: absolute;
+			top: 0;
+			left: 0;
+			font-size: 96px;
+			}
+		}
+	}
+}
+
 /*************************
 **********BUTTONS*********
 *************************/
@@ -386,6 +462,7 @@ body {
 *******PAGE CONTENT*******
 *************************/
 .main-content {
+	margin-top: 75px;
 	header {
 		margin-bottom: 20px;
 			h2 {
@@ -418,7 +495,8 @@ body {
 			   	&.front {
 			   		padding: 15px;
 			   		background: $tx-col;
-			   		@include opacity(0);
+			   		@include opacity(0.0);
+			   		@include transition(all 0.3s ease-in-out);
 			   		p {
 			   			position: relative;
 			   			margin-bottom: 20px;
@@ -459,4 +537,7 @@ body {
 	@include transition(all 0.2s);
 	@include animation(clickor 2.5s infinite);
 	cursor: default;
-		}
+	&.hidden {
+		display: none;
+	}
+}
