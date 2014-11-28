@@ -442,6 +442,10 @@ body {
 		font-size: 36px;
 		margin-right: 5px;
 	}
+	&:visited ,
+	&:focus {
+		text-decoration: none;
+	}
 	&:after {
 		height: 100%;
 		width: 0;
@@ -499,6 +503,7 @@ body {
 			   		@include transition(all 0.3s ease-in-out);
 			   		p {
 			   			position: relative;
+			   			min-height: 40px;
 			   			margin-bottom: 20px;
 			   			font-size: 12px;
 			   			color: $bg-col;	
@@ -513,7 +518,7 @@ body {
 			   				}
 			   			}
 			   			&.active {
-			   				@include opacity(0.8);
+			   				@include opacity(0.9);
 			   			}
 			   		}   	
 			   }
@@ -539,5 +544,45 @@ body {
 	cursor: default;
 	&.hidden {
 		display: none;
+	}
+}
+
+/*************************
+*********PORTFOLIO********
+*************************/
+.info-box.portfolio-item {
+	height: 300px;	
+	&.first {
+		background: url(../images/monika.jpg) no-repeat;
+		background-size: cover;		
+	}
+	&.second {
+		background: url(../images/teatrparanoja.jpg) no-repeat;	
+		background-size: cover;	
+	}
+	&.third {
+		background: url(../images/leszekchwastek.jpg) no-repeat;
+		background-size: cover;		
+	}
+	h4 {
+		margin: 0 0 30px 0;
+		color: $bg-col;
+		font-size: 16px;
+	}
+	.inner.front {
+		padding: 30px;
+		p {
+		font-size: 14px;
+		text-transform: uppercase;
+		}
+	}
+	.baton {
+		color: $bg-col;
+	&:hover {
+		color: $tx-col;
+		}
+	&:after {
+		background: $bg-col;
+		}
 	}
 }
