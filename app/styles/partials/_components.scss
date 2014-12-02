@@ -11,6 +11,9 @@
 body {
   padding-top: 60px;
 }
+a:hover {
+	text-decoration: none;
+	}
 .no-list {
 	list-style: none;
 	padding: 0;
@@ -25,6 +28,10 @@ body {
 .go-right {
 	right: 5%;
 }
+.full-l {
+	width: 100%;
+}
+
 /*************************
 ************MENU**********
 *************************/
@@ -370,8 +377,8 @@ body {
 			position: relative;
 			height: 700px;
 			width: 100%;
-			top: -200px;
-			background: url(../images/archimedes.jpg) no-repeat;
+			top: -150px;
+			background: url(../images/archimedes2.jpg) no-repeat;
 		}
 	}
 	&.design {
@@ -380,8 +387,8 @@ body {
 			position: relative;
 			height: 700px;
 			width: 100%;
-			top: -200px;
-			background: url(../images/design.jpg) no-repeat;
+			top: -150px;
+			background: url(../images/design2.jpg) no-repeat;
 			background-size: cover;
 			background-position: center center; 
 		}
@@ -392,8 +399,8 @@ body {
 			position: relative;
 			height: 700px;
 			width: 100%;
-			top: -200px;
-			background: url(../images/constructor.jpg) no-repeat;
+			top: -150px;
+			background: url(../images/constructor2.jpg) no-repeat;
 			background-size: cover;
 			background-position: center 10%; 
 		}
@@ -462,6 +469,9 @@ body {
 		width: 100%;
 	}
 }
+.baton-container {
+	margin: 10px 0;
+}
 /*************************
 *******PAGE CONTENT*******
 *************************/
@@ -479,6 +489,22 @@ body {
 				float: left;
 				margin-right: 10px;
 				font-size: 50px;
+			}			
+	}
+	header.mini {
+		float: left;
+		width: 100%;
+		margin-bottom: 15px;
+			h3 {
+				margin: 5px 0;
+				font-size: 18px;
+				text-transform: uppercase;
+				line-height: 0.9;
+			}
+			span {
+				float: left;
+				margin-right: 5px;
+				font-size: 36px;
 			}			
 	}
 	.info-box {
@@ -579,10 +605,88 @@ body {
 	.baton {
 		color: $bg-col;
 	&:hover {
-		color: $tx-col;
+		color: #fff;
 		}
 	&:after {
 		background: $bg-col;
 		}
 	}
+}
+
+/*************************
+**********CONTACT*********
+*************************/
+.contact {
+	margin-bottom: 20px;
+	a {
+		text-decoration: none;
+	}
+	ul {
+		overflow: hidden;
+		li {
+			float: left;
+			margin: 15px 0 0 0;
+		}
+	}
+	[class^="icon-"], [class*=" icon-"] {
+		font-size: 40px;
+		float: left;
+		margin-right: 15px;
+	}
+}
+
+.bio {
+	margin-bottom: 30px;
+}
+
+/*************************
+************BLOG**********
+*************************/
+.blog-item {
+	float: left;
+	width: 100%;
+	.preview {
+		float: left;
+		img {
+			width: 225px;
+			margin-right: 20px;
+		}
+	}
+	.article-content {
+		.article-title {
+		font-size: 18px;
+		margin: 0;
+	}
+	.article-date ,
+	.tags {
+		float: left;
+		font-size: 10px;
+		color: #fff;
+		.icon-calendar ,
+		.icon-tag {
+			float: left;
+			font-size: 20px;
+			margin-right: 5px;	
+			}
+			a {
+			color: #fff;
+				&:hover {
+					text-decoration: underline; 
+				}
+			}
+		}
+		.article-info {
+			overflow: hidden;
+			margin-bottom: 10px;
+		}
+	}
+	.article-date {
+		margin-right: 10px;
+	}
+	.baton {
+		color: #fff;
+		&:hover {
+			color: $bg-col;
+		}
+	}	
 }
