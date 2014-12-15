@@ -9,10 +9,13 @@
 
 /* Space out content a bit */
 body {
-  padding-top: 60px;
+	position: relative;
+  	padding-top: 60px;
 }
-a:hover {
+a:hover ,
+a:focus {
 	text-decoration: none;
+	outline: none;
 	}
 .no-list {
 	list-style: none;
@@ -29,12 +32,66 @@ a:hover {
 	right: 5%;
 }
 .full-l {
-	width: 100%;
+	width: 100% !important;
 }
-
+.border-b {
+	border-bottom: 1px solid $tx-col;
+}
+.border-t {
+	border-top: 1px solid $tx-col;
+}
 /*************************
 ************MENU**********
 *************************/
+.navbar-header {
+    		.menu-trigger {
+    			display: none;
+    			position: relative;
+    			float: right;
+    			width: 40px;
+    			height: 30px;
+    			margin: 15px 15px 0 0;
+    			cursor: pointer;
+    			&.activeted {
+					-webkit-transform: translateZ(0);
+					@include transition(all 0.2s);
+					@include animation(clickor 2.5s infinite);
+				> span {
+					background: #fff;
+						}
+					}
+    			> span {
+    			 display: block;
+    			 position: absolute;
+    			 width: 100%;
+    			 height: 1px;
+    			 background: $tx-col;
+    			 @include transition(all 0.5s);
+    			 &.top {
+    			 	top: 0;
+    			 }
+    			 &.middle {
+    			 	top: 14px;
+    			 }
+    			 &.bottom {
+    			 	bottom: 0;
+    			 }
+    			}
+    			&.open {
+    				> span {
+    					&.top {
+		    			 	transform: translateY(15px) rotate(-45deg);
+		    			}
+		    			&.middle {
+		    			 	@include rotateY(90deg);
+		    			}
+		    			&.bottom {
+		    			 	transform: translateY(-14px) rotate(45deg);
+		    			}
+    				}
+    			}
+    		}
+    	}
 .navigation {
 	position: relative;
 	float: right;
@@ -60,6 +117,14 @@ a:hover {
 		z-index: 1;
 		> li:hover .hover-menu {
 		display: block;
+		}
+	}
+	&.activeted {
+		-webkit-transform: translateZ(0);
+		@include transition(all 0.2s);
+		@include animation(clickor 2.5s infinite);
+		> ul > li > a {
+			color: #fff;
 		}
 	}
 }
@@ -110,6 +175,7 @@ a:hover {
 		top: 0;
 		left: 0;
 		background: $tx-col;
+		-webkit-transform: translateZ(0);
 		@include transition(width 0.2s, left 0.3s);
   		z-index: -1;
 	}
@@ -119,25 +185,21 @@ a:hover {
 *********** & ************
 **********SLIDES**********
 *************************/
-.border-b {
-	border-bottom: 1px solid $tx-col;
-}
-.border-t {
-	border-top: 1px solid $tx-col;
-}
 #bgsvg {
   position: absolute;
   top: -40px;
   left: 0px;
   width: 100%;
   height: 500px;
+  -webkit-transform: translateZ(0);
 }
 #bgsvgnx {
   position: absolute;
-  top: -80px;
-  left: 0px;
+  top: -150px;
+  left: 0;
   width: 100%;
   height: 1500px;
+  -webkit-transform: translateZ(0);
 }
 #slider {
 	section {
@@ -147,6 +209,8 @@ a:hover {
 }
 .slide-content {
 	position: absolute;
+	width: 66%;
+	top: 15%;
 	z-index: 1;
 	h2 {
 		font-size: 48px;
@@ -157,18 +221,12 @@ a:hover {
 		margin: 0 0 20px 0;
 	}
 	&.first {
-		width: 66%;
-		top: 15%;
 		right: 5%;
 	}
 	&.second{
-		width: 61%;
-		top: 15%;
 		left: 5%;
 	}
 	&.third{
-		width: 66%;
-		top: 15%;
 		right: 5%;
 	}
 }
@@ -181,6 +239,7 @@ a:hover {
 		.icon-cog {
 			position: absolute;
 			display: block;
+			-webkit-transform: translateZ(0);
 			&.first {
 				display: block;
 				font-size: 12rem;
@@ -205,7 +264,7 @@ a:hover {
 	&.second {
 		width: 17%;
 		top: 19%;
-		right: 13%;
+		right: 10%;
 		img {
 			width: 100%;
 			height: auto;
@@ -213,41 +272,42 @@ a:hover {
 		span {
 			position: absolute;
 			display: block;
-			font-size: 0rem;
+			font-size: 0;
+			-webkit-transform: translateZ(0);
 			@include animation(bubblepopup 5s ease-in 0s infinite normal);
 		}
 		.icon-plus2 {
 			color: #04c461;
 			&.first {
-				margin-top: -93%;
-				margin-left: 35%;
+				top: 20%;
+				left: 30%;
 				@include animation-delay(0.3s);
 			}
 			&.second {
-				margin-top: -74%;
-				margin-left: 70%;
+				top: 35%;
+				left: 65%;
 				@include animation-delay(0.5s);
 			}
 			&.third {
-				margin-top: -42%;
-				margin-left: 17%;
+				top: 63%;
+				left: 12%;
 				@include animation-delay(1.2s);
 			}
 		}
 		.icon-minus2 {
 			color: #ff0000;
 			&.first {
-				margin-top: -115%;
-				margin-left: 64%;
+				top: 0;
+				left: 59%;
 			}
 			&.second {
-				margin-top: -64%;
-				margin-left: 27%;
+				top: 44%;
+				left: 22%;
 				@include animation-delay(0.8s);
 			}
 			&.third {
-				margin-top: -50%;
-				margin-left: 82%;
+				top: 56%;
+				left: 77%;
 				@include animation-delay(1s);
 			}
 		}
@@ -356,6 +416,7 @@ a:hover {
 		span {
 			position: relative;
 			font-size: 40px;
+			-webkit-transform: translateZ(0);
 			@include animation(jump 0.6s ease-in-out 0s infinite normal);
 		}
 	}
@@ -375,34 +436,37 @@ a:hover {
 		height: 500px;
 		.plx-item {
 			position: relative;
-			height: 700px;
+			height: 800px;
 			width: 100%;
 			top: -150px;
-			background: url(../images/archimedes2.jpg) no-repeat;
+			background-image: url(../images/archimedes2.jpg);
+			background-repeat: no-repeat;
 		}
 	}
 	&.design {
 		height: 500px;
 		.plx-item {
 			position: relative;
-			height: 700px;
+			height: 800px;
 			width: 100%;
 			top: -150px;
-			background: url(../images/design2.jpg) no-repeat;
+			background-image: url(../images/design2.jpg);
 			background-size: cover;
 			background-position: center center; 
+			background-repeat: no-repeat;
 		}
 	}
 	&.constructor {
 		height: 500px;
 		.plx-item {
 			position: relative;
-			height: 700px;
+			height: 800px;
 			width: 100%;
 			top: -150px;
-			background: url(../images/constructor2.jpg) no-repeat;
+			background-image: url(../images/constructor2.jpg);
 			background-size: cover;
 			background-position: center 10%; 
+			background-repeat: no-repeat;
 		}
 	}
 
@@ -479,7 +543,8 @@ a:hover {
 	margin-top: 75px;
 	header {
 		margin-bottom: 20px;
-			h2 {
+			h2,
+			h1 {
 				margin: 5px 0;
 				font-size: 24px;
 				text-transform: uppercase;
@@ -565,6 +630,7 @@ a:hover {
 	text-align: center;
 	border-radius: 7px;
 	border: 1px solid $tx-col;
+	-webkit-transform: translateZ(0);
 	@include transition(all 0.2s);
 	@include animation(clickor 2.5s infinite);
 	cursor: default;
@@ -576,19 +642,165 @@ a:hover {
 /*************************
 *********PORTFOLIO********
 *************************/
+.ajaxload {
+	position: fixed;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	z-index: 1040;
+}
+#single-portfolio-landing {
+	width: 100%;
+	@include transition(all 0.9s);
+}
+
+#single-portfolio-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1040;
+	background: rgba(29, 24, 31, 0.8);
+	.scrollable {
+		overflow-y: scroll;
+		width: 100%;
+		height: 100%;
+	}
+	.portfolio-baton {
+		position: relative;
+		float: right;
+		width: 90px;
+		height: 90px;
+		margin: 40px 0 40px 0;
+		padding: 15px;
+		background-color: $bg-col;
+		cursor: pointer;
+		text-align: center;
+		span {
+			font-size: 60px;
+			color: $nx-col;
+			@include transition(color 0.25s);
+			&:hover {
+				color: $tx-col;
+			}
+		}
+	}
+	.portfolio-thumbnail {
+		float: left;
+		height: 350px;
+		width: 50%;
+		background-image: url(../images/monika.jpg);
+		background-size: cover;
+		background-position: center top;	
+		background-repeat: no-repeat;	
+	}
+	.portfolio-info-chart {
+		overflow: hidden;
+		height: 350px;
+		width: 50%;
+		background-color: $bg-col;
+		padding: 15px 25px;
+		h3 {
+			margin: 0 0 5px 0;
+			font-size: 30px;
+			color: #fff;
+		}
+		.excerpt {
+			font-size: 14px;
+			line-height: 18px;
+		}
+		a.baton {
+			width: 210px;
+			height: 36px;
+			padding: 0;
+			color: $nx-col;
+			&:hover {
+				color: $tx-col;
+			}
+			&:hover:after ,
+			&:active:after {
+				display: none;
+			}
+		}
+		.custom-fields {
+			> p {
+				width: 210px;
+				height: auto;
+				padding: 0;
+				color: $tx-col;
+				.field-title {
+					float: none;
+					display: block;
+					margin-bottom: 3px;
+					font-size: 12px;
+				}
+				.work {
+					float: none;
+					display: block;
+					color: #fff;
+					font-size: 12px;
+				}
+				a {
+					color: #fff;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+				.spacer {
+					float: none;
+					margin: 0;
+					font-size: 12px;
+					color: #fff;
+				}
+			}
+		}
+	}
+	.portfolio-content {
+		img {
+			max-width: 100%;
+			margin-top: 40px;
+			background-color: $bg-col;
+			padding: 25px;
+		}
+		p {
+			margin-top: 40px;
+			background-color: $bg-col;
+			padding: 25px;
+		}
+		strong {
+			font-size: 17px;
+			line-height: 15px;
+			text-transform: uppercase;
+		}
+		a {
+			color: #fff;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+#bgsvgportfolio {
+	height: 100%;
+}
 .info-box.portfolio-item {
 	height: 300px;	
 	&.first {
-		background: url(../images/monika.jpg) no-repeat;
-		background-size: cover;		
+		background-image: url(../images/monika.jpg);
+		background-size: cover;	
+		background-repeat: no-repeat;	
 	}
 	&.second {
-		background: url(../images/teatrparanoja.jpg) no-repeat;	
-		background-size: cover;	
+		background-image: url(../images/teatrparanoja.jpg);	
+		background-size: cover;
+		background-repeat: no-repeat;	
 	}
 	&.third {
-		background: url(../images/leszekchwastek.jpg) no-repeat;
-		background-size: cover;		
+		background-image: url(../images/leszekchwastek.jpg);
+		background-size: cover;	
+		background-repeat: no-repeat;	
 	}
 	h4 {
 		margin: 0 0 30px 0;
@@ -612,12 +824,83 @@ a:hover {
 		}
 	}
 }
-
+.portfolio-box {
+	position: relative;
+	float: left;
+	width: 33.3333333333333333%;
+	.info-box.portfolio-item {
+	height: 270px;
+		.inner.front {
+		padding: 15px;
+			p {
+		font-size: 13px;
+			}
+		}
+		h4 {
+		margin: 0 0 25px 0;
+		font-size: 15px;
+		}
+	}	
+}
+#kind-filter {
+	margin-bottom: 20px;
+	li {
+		margin-bottom: 5px;
+		padding: 0 15px;
+		background-color: $nx-col;
+		color: $bg-col;
+		font-size: 18px;
+		line-height: 40px;
+		text-transform: uppercase;
+		@include transition(all 0.250s);
+		&.active ,
+		&:hover {
+			background-color: $tx-col;
+			color: #fff;
+		}
+	}
+}
+#mix-container {
+	.mix {
+		display: none;
+	}
+}
+#time-sort {
+	span {
+		float: left;
+		width: 100%;
+		margin-bottom: 5px;
+		font-size: 35px;
+	}
+	.sort {
+		float: left;
+		margin-right: 5px;
+		padding: 0 10px;
+		background-color: $nx-col;
+		color: $bg-col;
+		font-size: 16px;
+		line-height: 36px;
+		text-transform: uppercase;
+		@include transition(all 0.250s);
+		&.active ,
+		&:hover {
+			background-color: #fff;
+		}
+	}
+}
 /*************************
 **********CONTACT*********
 *************************/
 .contact {
 	margin-bottom: 20px;
+	.sprite-photo {
+		height: 250px;
+		width: 250px;
+		margin: 0 auto 10px auto;
+		background: url(../images/photo-sprite.jpg) no-repeat;
+		border-radius: 50%;
+		border: 5px solid $tx-col;
+	}
 	a {
 		text-decoration: none;
 	}
@@ -626,6 +909,18 @@ a:hover {
 		li {
 			float: left;
 			margin: 15px 0 0 0;
+			@include transition(all 0.5 ease-in);
+			a {
+				@include transition(all 0.5 ease-in);
+			}
+		}
+		&.deactivate {
+			li {
+				color: $nx-col;
+				a {
+					color: $nx-col;
+				}
+			}
 		}
 	}
 	[class^="icon-"], [class*=" icon-"] {
@@ -645,11 +940,12 @@ a:hover {
 .blog-item {
 	float: left;
 	width: 100%;
+	margin-bottom: 30px;
 	.preview {
 		float: left;
 		img {
 			width: 225px;
-			margin-right: 20px;
+			margin: 0 20px 0 0;
 		}
 	}
 	.article-content {
@@ -660,6 +956,7 @@ a:hover {
 	.article-date ,
 	.tags {
 		float: left;
+		margin-bottom: 5px;
 		font-size: 10px;
 		color: #fff;
 		.icon-calendar ,
@@ -689,4 +986,78 @@ a:hover {
 			color: $bg-col;
 		}
 	}	
+}
+
+/*************************
+***********FOOTER*********
+*************************/
+/* home */
+.border-bd {
+	border: 5px solid $tx-col;
+}
+footer {
+	margin-top: 20px;
+	.content {
+		height: 220px;
+		ul {
+			li {
+				span {
+	  		position: absolute;
+			font-size: 36px;
+			&.first {
+				top: 20%;
+				left: 20%;
+			}
+			&.second {
+				top: 60%;
+				left: 50%;
+			}
+			&.third {
+				top: 25%;
+				left: 70%;
+			}
+			&.fourth {
+				top: 15%;
+				left: 60%;
+			}
+			&.fifth {
+				top: 50%;
+				left: 30%;
+			}
+			&.sixth {
+				top: 10%;
+				left: 80%;
+			}
+			&.seventh {
+				font-size: 40px;
+				top: 60%;
+				left: 47%;
+			}
+		}
+			}
+		}
+		.game-over {
+			position: relative;
+			width: 40%;
+			min-width: 215px;
+			height: 126px;
+			margin: 57px auto 0 auto;
+			padding: 12px;
+			background: $bg-col;
+			z-index: 1;
+			p {
+				margin: 0;
+				font-size: 36px;
+				text-transform: uppercase;
+				text-align: center;
+			}
+			.baton {
+				width: 100%;
+			}
+		}
+	}
+	.copy {
+		height: 40px;
+		line-height: 40px;
+	}
 }

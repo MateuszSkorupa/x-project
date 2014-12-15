@@ -6,7 +6,10 @@
   position: relative;
   -webkit-transform-style: preserve-3d;
 }
-
+.ajaxload > .box3d {
+  float: none;
+  margin: 0 auto;
+}
 .box3d div {
   position: absolute;
   left: 0;

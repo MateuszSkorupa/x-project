@@ -193,7 +193,7 @@ module.exports = function (grunt) {
     wiredep: {
       app: {
         ignorePath: /^\/|\.\.\//,
-        src: ['<%= config.app %>/index.html'],
+        src: ['<%= config.app %>/{,*/}*.html'],
         exclude: ['bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js']
       },
       sass: {
@@ -211,7 +211,8 @@ module.exports = function (grunt) {
             '<%= config.dist %>/styles/{,*/}*.css',
             '<%= config.dist %>/images/{,*/}*.*',
             '<%= config.dist %>/styles/fonts/{,*/}*.*',
-            '<%= config.dist %>/*.{ico,png}'
+            '<%= config.dist %>/*.{ico,png}',
+            '<%= config.dist %>/svg/{,*/}*.svg'
           ]
         }
       }
@@ -256,9 +257,9 @@ module.exports = function (grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '<%= config.app %>/images',
+          cwd: '<%= config.app %>/svg',
           src: '{,*/}*.svg',
-          dest: '<%= config.dist %>/images'
+          dest: '<%= config.dist %>/svg'
         }]
       }
     },
@@ -274,7 +275,8 @@ module.exports = function (grunt) {
           removeEmptyAttributes: true,
           removeOptionalTags: true,
           removeRedundantAttributes: true,
-          useShortDoctype: true
+          useShortDoctype: true,
+          caseSensitive: true
         },
         files: [{
           expand: true,
@@ -310,7 +312,7 @@ module.exports = function (grunt) {
     // concat: {
     //   dist: {}
     // },
-
+    
     // Copies remaining files to places other tasks can use
     copy: {
       dist: {
@@ -323,7 +325,8 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             'images/{,*/}*.webp',
             '{,*/}*.html',
-            'styles/fonts/{,*/}*.*'
+            'styles/fonts/{,*/}*.*',
+            'fonts/{,*/}*.*'
           ]
         }, {
           src: 'node_modules/apache-server-configs/dist/.htaccess',
@@ -413,8 +416,9 @@ module.exports = function (grunt) {
     'uglify',
     'copy:dist',
     'rev',
-    'usemin',
-    'htmlmin'
+    'usemin'
+    // ,
+    // 'htmlmin'
   ]);
 
   grunt.registerTask('default', [

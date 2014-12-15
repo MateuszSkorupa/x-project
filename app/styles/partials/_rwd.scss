@@ -1,0 +1,529 @@
+@import "_base";
+
+
+/*==================================================
+=            Bootstrap 3 Media Queries             =
+==================================================*/
+
+
+
+
+    /*==========  Mobile First Method  ==========*/
+
+    /* Custom, iPhone Retina */ 
+    @media only screen and (min-width : 320px) {
+        
+    }
+
+    /* Extra Small Devices, Phones */ 
+    @media only screen and (min-width : 480px) {
+
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width : 768px) {
+
+    }
+
+    /* Medium Devices, Desktops */
+    @media only screen and (min-width : 992px) {
+
+    }
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (min-width : 1200px) {
+
+    }
+
+
+
+    /*==========  Non-Mobile First Method  ==========*/
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (max-width : 1200px) {
+		/*SLIDER*/
+		.slide-content {
+			h2 {
+				font-size: 36px;
+			}
+		}
+		/*PARALLAX*/
+		.plx-w {
+			&.archimedes {
+				height: 400px;
+				.plx-item {
+				height: 750px;
+				top: -170px;
+			}
+		}
+			&.design {
+				height: 400px;
+				.plx-item {
+				height: 750px;
+				top: -150px;
+				background: url(../images/design2.jpg) no-repeat;
+				background-size: cover;
+				background-position: center center; 
+			}
+		}
+			&.constructor {
+				height: 400px;
+				.plx-item {
+				height: 750px;
+				top: -150px;
+				background: url(../images/constructor2.jpg) no-repeat;
+				background-size: cover;
+				background-position: center 10%; 
+			}
+		}
+	}
+	.plx-w {
+		.txt {
+		width: 54%;
+			h3 {	
+			padding-left: 76px;
+			font-size: 36px;	
+				span {
+				font-size: 71px;
+					}
+				}
+			}
+		}
+		/*PORTFOLIO*/
+		#single-portfolio-container {
+			.portfolio-info-chart {
+				h3 {
+					font-size: 24px;
+				}
+			}
+		}
+		.portfolio-box {
+			.info-box.portfolio-item {
+			height: 230px;
+				.inner.front {
+				padding: 10px;
+					p {
+				margin: 0 0 10px 0;
+				padding-left: 40px;
+				font-size: 12px;
+				[class^="icon-"],
+			   	[class*=" icon-"] {
+					font-size: 36px;
+					}
+				}
+				.baton {
+					width: 100%;
+					padding: 4px 0;
+				}
+					h4 {
+				margin: 0 0 15px 0;
+				font-size: 14px;
+					}
+				}	
+			}
+		}
+    }
+
+    /* Medium Devices, Desktops */
+    @media only screen and (max-width : 992px) {
+    	/*SLIDER*/
+    	.slide-content {
+			h2 {
+				font-size: 30px;
+			}
+			p {
+				font-size: 12px;
+			}
+		}
+		.graphic {
+			&.first {
+				.icon-cog {
+					&.first {
+						display: block;
+						font-size: 8rem;
+						left: 43px;
+						top: 30px;
+					}
+					&.second {
+						font-size: 7rem;
+						left: 0;
+						top: 90px;
+					}
+					&.third {
+						font-size: 4.5rem;
+						left: 63px;
+						top: 102px;
+					}
+				}
+			}
+			&.third {
+				.icon-monitor {
+					font-size: 13rem;
+					top: 30px;
+					left: -30px;
+					}
+				.icon-phone {
+					font-size: 4rem;
+					top: 150px;
+					left: 110px;
+					}
+				.icon-tablet {
+					font-size: 6rem;
+					top: 170px;
+					left: -20px;
+					}
+				.icon-ipod {
+					font-size: 3rem;
+					top: 200px;
+					left: 60px;
+					}
+				}
+			}
+		.carousel-inner {
+			.item {
+				height: 330px;
+				}
+			}
+		/*PAGE CONTENT*/
+		.main-content {
+			header {
+				margin-bottom: 15px;
+				h2 {
+					font-size: 20px;
+				}
+				span {
+				font-size: 45px;
+				}			
+			}
+			.info-box {
+			   	img {
+			   	max-width: 240px;
+			   	}
+			}
+    	}
+    	/*PARALLAX*/
+		.plx-w {
+			.txt {
+			width: 59%;
+				h3 {	
+				padding-left: 76px;
+				font-size: 30px;	
+					span {
+					font-size: 61px;
+					}
+				}
+			}
+		}
+		/*PORTFOLIO*/
+		#single-portfolio-container {
+			.portfolio-thumbnail {
+				width: 100%;
+			}
+			.portfolio-info-chart {
+				width: 100%;
+				height: auto;
+				h3 {
+					margin-top: 10px;
+				}
+				a.baton {
+					width: 180px;
+				}
+			}
+		}
+		.info-box.portfolio-item {
+			height: 250px;	
+			h4 {
+			margin: 0 0 15px 0;
+			font-size: 14px;
+			}
+		.inner.front {
+			padding: 15px;
+					p {
+				padding-left: 40px;
+				font-size: 12px;
+				[class^="icon-"],
+			   	[class*=" icon-"] {
+					font-size: 36px;
+					}
+				}
+				.baton {
+					width: 100%;
+				}
+			}
+		}
+		.portfolio-box {
+			width: 50%;
+		}
+	}
+
+    /* Small Devices, Tablets */
+    @media only screen and (max-width : 768px) {
+    	/*MENU*/
+    	.navbar-header {
+    		border-bottom: 1px solid $tx-col;
+    		margin-bottom: -1px;
+    		.menu-trigger {
+    			display: block;
+    		}
+    	}
+    	.navigation {
+    		width: 100%;
+    		max-height: 0;
+			position: relative;
+			float: left;
+			overflow: hidden;
+			@include transition(all 0.9s);
+			&.open {
+			 	max-height: 600px;
+			}
+			> ul {
+				> li {
+					float: none;
+					> a {
+						display: block;
+						float: none;
+						padding: 10px 15px;
+					}
+				}
+			}
+			#menu {
+				float: none;
+				position: relative;
+				z-index: 1;
+			}
+		}
+		.hover-menu {
+			max-height: 0;
+			position: static;
+			display: block;
+			overflow: hidden;
+			@include transition(all 0.9s);
+			li {
+				padding-left: 15px;
+			}
+			&.open {
+				max-height: 500px;
+			}
+		}
+		#magic-line {
+			display: none !important;
+		}
+		/*SLIDER*/
+		.slide-content {
+			width: 90%;
+			top: 18%;
+			h2 {
+				font-size: 26px;
+				margin: 0 0 10px 0;
+			}
+			p {
+				margin: 0 0 10px 0;
+			}
+		}
+		.graphic {
+			display: none;
+		}
+
+		/*PARALLAX*/
+		.plx-w {
+			&.archimedes {
+				height: 400px;
+				.plx-item {
+				height: 750px;
+				top: -150px;
+				background: url(../images/archimedes2.jpg) no-repeat;
+				background-size: cover;
+				background-position: center center; 
+			}
+		}
+			&.design {
+				height: 400px;
+				.plx-item {
+				height: 750px;
+				top: -150px;
+				background: url(../images/design2.jpg) no-repeat;
+				background-size: cover;
+				background-position: center center; 
+			}
+		}
+			&.constructor {
+				height: 400px;
+				.plx-item {
+				height: 750px;
+				top: -150px;
+				background: url(../images/constructor2.jpg) no-repeat;
+				background-size: cover;
+				background-position: center 10%; 
+				}
+			}
+		}
+		.plx-w {
+			.txt {
+			width: 440px;
+			}
+		}
+
+		/*PORTFOLIO*/
+		#single-portfolio-container {
+			.portfolio-thumbnail {
+				height: 250px;
+			}
+			.portfolio-info-chart {
+				padding: 10px 15px;
+				h3 {
+					font-size: 20px;
+				}
+				
+			}
+				.portfolio-content {
+				img {
+					margin-top: 20px;
+					padding: 10px 15px;
+				}
+				p {
+					margin-top: 20px;
+					padding: 10px 15px;
+				}
+			}
+		}
+		.info-box.portfolio-item {
+			height: 250px;	
+			h4 {
+			margin: 0 0 20px 0;
+			font-size: 16px;
+			}
+		.inner.front {
+			padding: 20px;
+					p {
+				padding-left: 55px;
+				font-size: 14px;
+				[class^="icon-"],
+			   	[class*=" icon-"] {
+					font-size: 40px;
+					}
+				}
+				.baton {
+					width: 230px;
+				}
+			}
+		}
+		.portfolio-box {
+			width: 100%;
+		}
+		/*FOOTER*/
+		footer {
+			margin-top: 0;
+		.content {
+			ul > li > span {
+				&.third {
+				top: 25%;
+				left: 80%;
+					}
+				&.fourth {
+				top: 10%;
+				left: 65%;
+					}
+				}
+			.game-over {
+				p {
+					font-size: 24px;
+					}
+				}
+			}
+		}
+    }
+
+    /* Extra Small Devices, Phones */ 
+    @media only screen and (max-width : 480px) {
+    	#bgsvg {
+    		display: none;
+    	}
+		/*SLIDER*/
+		.slide-content {
+			width: 100%;
+			top: 10%;
+			&.first {
+				right: 0;
+			}
+			&.second{
+				left: 0;
+			}
+			&.third{
+				right: 0;
+			}
+			h2 {
+				font-size: 20px;
+			}
+		}
+		.carousel-inner {
+			.item {
+				height: 360px;
+				}
+			}
+		/*PAGE CONTENT*/
+		.main-content {
+			margin-top: 40px;
+			header {
+				margin-bottom: 10px;
+				h2 {
+					font-size: 18px;
+				}
+			span {
+				margin-right: 5px;
+				font-size: 40px;
+				}			
+			}
+			.info-box {
+    		height: 320px;
+    			img {
+    				max-width: 320px;
+    			}
+    		}
+    	}
+
+    	/*PORTFOLIO*/
+		#single-portfolio-container {
+			.portfolio-thumbnail {
+				width: 100%;
+				height: 200px;
+			}
+			.portfolio-info-chart {
+				width: 100%;
+				height: auto;
+				h3 {
+					font-size: 18px;
+				}
+				a.baton {
+					width: 100%;
+				}
+				.custom-fields {
+				> p {
+					width: 100%;
+					}
+				}
+			}
+		}
+    	.info-box.portfolio-item {
+			height: 270px;	
+		}
+    	/*PARALLAX*/
+    	.hidden-mobile {
+    		display: none;
+    	}
+    	/*BLOG*/
+    	.blog-item {
+			margin-bottom: 15px;
+			.preview {
+				img {
+			width: 100%;
+			margin: 0 0 10px 0;
+					}
+				}
+			}
+    }
+
+    /* Custom, iPhone Retina */ 
+    @media only screen and (max-width : 320px) {
+        
+    }
+

@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body>
+  <body class="home">
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -24,6 +24,7 @@
       <path d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100' fill='none' stroke='#ff5335' stroke-width='1'/>
       <path d='M28 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34' fill='none' stroke='#ff5335' stroke-width='1'/>
     </svg>
+    
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
         <header class="navbar-header">
@@ -43,6 +44,11 @@
             </div>
               
           </a>
+          <p class="menu-trigger">
+            <span class="top"></span>
+            <span class="middle"></span>
+            <span class="bottom"></span>
+          </p>
         </header>
         <div class="navigation">
           <ul id="menu" class="no-list">
@@ -78,7 +84,7 @@
                 </li>
               </ul>
             </li>
-            <li><a href="#">portfolio</a></li>
+            <li><a href="archive-portfolio.html">portfolio</a></li>
             <li><a href="#">blog</a></li>
           </ul>
         </div>
@@ -123,7 +129,7 @@
                       <div class="slide-content first">
                         <h2 class="upper-case">Witryny zaprojektowane i realizowane z pasją</h2>
                         <p>Jestem front-end developerem z Knurowa i specjalizuję się w responsywnych witrynach internetowych, wykonanych w technologii HTML/CSS/JS. Staram się, aby wykonane przeze mnie strony www były jak najbardziej funkcjonalne, przejrzyste oraz intuicyjne w nawigacji.</p>
-                        <a class="baton" href="#">
+                        <a class="baton scroll" href="#me-target">
                           <span class="icon-info"></span>
                           Trochę więcej informacji o mnie.
                         </a>
@@ -138,7 +144,7 @@
                       <div class="slide-content second">
                         <h2>Agencja czy freelancer?</h2>
                         <p>Zastanawiasz się komu powierzyć realizację Twojej strony internetowej? Hmm, wszystko zależy od tego czego potrzebujesz i jakim budżetem dysponujesz. Obie opcje mają swoje plusy i minusy.</p>
-                        <a class="baton pull-left" href="#">
+                        <a class="baton pull-left scroll" href="#me-target">
                           <span class="icon-batman"></span>
                           Kontakt do mnie :)
                         </a>
@@ -148,7 +154,7 @@
                         </a>
                       </div>
                       <div class="graphic second">
-                        <img src="../images/tree.png" alt="Tree diagram">
+                        <img src="images/tree.png" alt="Tree diagram">
                         <span class="icon-plus2 first"></span>
                         <span class="icon-plus2 second"></span>
                         <span class="icon-plus2 third"></span>
@@ -163,7 +169,7 @@
                       <div class="slide-content third">
                         <h2>Responsive web design</h2>
                         <p>Technologia, która 2 lata temu była absolutną nowością na Polskim rynku. Teraz jest obowiązującym standardem, od którego nie ma odwrotu.</p>
-                        <a class="baton" href="#">
+                        <a class="baton scroll" href="#tech-target">
                           <span class="icon-atom"></span>
                           Techniki i technologie dostępne w mojej ofercie.
                         </a>
@@ -186,8 +192,8 @@
     </div>
     <div class="container">
 
-      <div class="row">
-        <div class="col-xs-12 direction">
+      <div class="row visible-md-block visible-lg-block">
+        <div class="col-xs-12 direction activation">
           <p>
             Skroluj w dół, aby</br>zwiedzić więcej...
           </p>
@@ -197,7 +203,7 @@
         </div>
       </div>
       
-      <section class="main-content">
+      <section id="tech-target" class="main-content">
         <div class="row">
           <header class="col-xs-12">
             <span class="icon-atom"></span>
@@ -206,14 +212,14 @@
         </div>
 
         <div class="row scrollme">
-          <div class="col-sm-4 col-xs-12 info-box pos-point">
+          <div class="col-md-4 col-xs-12 info-box pos-point">
             <img 
             class="animateme" 
             data-when="enter"
             data-from="1"
             data-to="0"
             data-scale="0.7"
-            src="../svg/keyboard2.svg" alt="Klawiatura">
+            src="svg/keyboard2.svg" alt="Klawiatura">
             <div class="inner">
               <span class="click-or-hover">
                 kliknij lub najedź
@@ -237,7 +243,7 @@ Bootstrap, Sprites, IcoMoon, SVG.
             </div>
             
           </div>
-          <div class="col-sm-4 col-xs-12 info-box">
+          <div class="col-md-4 col-xs-12 info-box">
              <img 
               class="animateme" 
               data-when="enter"
@@ -245,7 +251,7 @@ Bootstrap, Sprites, IcoMoon, SVG.
               data-to="0"
               data-opacity="0.1"
               data-easing="easeinout"
-             src="../svg/pictures.svg" alt="Projekty graficzne">
+             src="svg/pictures.svg" alt="Projekty graficzne">
              <div class="inner">
               <span class="click-or-hover">
                 kliknij lub najedź
@@ -263,7 +269,7 @@ Bootstrap, Sprites, IcoMoon, SVG.
               
             </div>
           </div>
-          <div class="col-sm-4 col-xs-12 info-box">
+          <div class="col-md-4 col-xs-12 info-box">
              <img
              class="animateme" 
               data-when="enter"
@@ -273,7 +279,7 @@ Bootstrap, Sprites, IcoMoon, SVG.
              
               data-rotatez="-180"
               data-easing="linear"
-             src="../svg/yingyang.svg" alt="Ying yang">
+             src="svg/yingyang.svg" alt="Ying yang">
              <div class="inner">
               <span class="click-or-hover">
                 kliknij lub najedź
@@ -286,11 +292,11 @@ Bootstrap, Sprites, IcoMoon, SVG.
               </p>
               <p>
                 <span class="icon-stats"></span>
-                Mogę przeprowadzić analizę słów kluczowych dla Twojego biznesu, tak aby trafić z witryną celnie do odpowiednich odbiorców. To właściwie pierwszy krok - zanim jeszcze wybierzesz nazwę domeny :) 
+                Mogę przeprowadzić analizę słów kluczowych dla Twojego biznesu, tak aby trafić z witryną celnie do odpowiednich odbiorców.
               </p>
               <p>
                 <span class="icon-medal"></span>
-                Zależy mi na tym, aby Twoja strona internetowa odniosła sukces i była dobrze postrzegana w sieć. To przysporzy mi dużo satysfakcji i jeszcze więcej zleceń. 
+                Zależy mi na tym, aby Twoja strona internetowa odniosła sukces i była dobrze postrzegana w sieć. To przysporzy mi dużo satysfakcji i jeszcze więcej zleceń :)
               </p>
               
             </div>
@@ -301,7 +307,7 @@ Bootstrap, Sprites, IcoMoon, SVG.
 
     </div>
 
-    <section class="main-content">
+    <section class="main-content hidden-mobile">
       <div class="container">
         <div class="row">
           <header class="col-xs-12">
@@ -349,7 +355,7 @@ Bootstrap, Sprites, IcoMoon, SVG.
                       data-easing="easeinout">
                       <h3>
                         <span class="icon-ruler"></span>
-                        Przełożenie idei na projekt graficzny</h3>
+                        Przekształcenie idei w projekt graficzny</h3>
                     </div>
                     <div class="plx-item"></div>
                   </div>    
@@ -380,7 +386,19 @@ Bootstrap, Sprites, IcoMoon, SVG.
         </div>
       </div>  
       </section>
-
+      <div id="single-portfolio-landing">
+      <!-- here goes AJAX code -->
+       <!-- <div class="ajaxload">
+          <div class='box3d'>
+                <div class='p1'></div>
+                <div class='p2'></div>
+                <div class='p3'></div>
+                <div class='p4'></div>
+                <div class='p5'></div>
+                <div class='p6'></div>
+          </div>
+        </div> -->
+      </div> 
       <section class="main-content">
         <div class="container">
 
@@ -402,7 +420,7 @@ Bootstrap, Sprites, IcoMoon, SVG.
             <div class="inner front">
               <h4>Tłumacz języka angielskiego Monika Wojtkiewicz</h4>
               <p>
-                <span class="icon-tag"></span>
+                <span class="icon-ruler"></span>
                 Design, RWD, SEO, onepage,
                 Wordpress, Danger 
               </p>
@@ -410,9 +428,9 @@ Bootstrap, Sprites, IcoMoon, SVG.
                 <span class="icon-rocket2"></span>
                 Październik, 2014 
               </p>
-              <a class="baton" href="#">
+              <a class="baton portfolio-link" href="single-portfolio.html">
                   <span class="icon-switch"></span>
-                  Zobacz więcej szczegółów o tym projekcie.
+                  Zobacz więcej szczegółów tego projektu.
               </a>
             </div>
             
@@ -428,7 +446,7 @@ Bootstrap, Sprites, IcoMoon, SVG.
             <div class="inner front">
               <h4>Tłumacz języka angielskiego Monika Wojtkiewicz</h4>
               <p>
-                <span class="icon-tag"></span>
+                <span class="icon-ruler"></span>
                 Design, RWD, SEO, onepage,
 Wordpress 
               </p>
@@ -436,9 +454,9 @@ Wordpress
                 <span class="icon-rocket2"></span>
                 Październik, 2014 
               </p>
-              <a class="baton" href="#">
+              <a class="baton portfolio-link" href="single-portfolio.html">
                   <span class="icon-switch"></span>
-                  Zobacz więcej szczegółów o tym projekcie.
+                  Zobacz więcej szczegółów tego projektu.
               </a>
               
             </div>
@@ -454,7 +472,7 @@ Wordpress
             <div class="inner front">
               <h4>Tłumacz języka angielskiego Monika Wojtkiewicz</h4>
               <p>
-                <span class="icon-tag"></span>
+                <span class="icon-ruler"></span>
                Design, RWD, SEO, onepage,
 Wordpress 
               </p>
@@ -462,9 +480,9 @@ Wordpress
                 <span class="icon-rocket2"></span>
                 Październik, 2014 
               </p>
-              <a class="baton" href="#">
+              <a class="baton portfolio-link" href="single-portfolio.html">
                   <span class="icon-switch"></span>
-                  Zobacz więcej szczegółów o tym projekcie.
+                  Zobacz więcej szczegółów tego projektu.
               </a>
               
             </div>
@@ -474,7 +492,7 @@ Wordpress
         </div>
       </section>
       
-      <section class="main-content">
+      <section id="me-target" class="main-content">
         <div class="container">
           <div class="row">
             <header class="col-xs-12">
@@ -486,8 +504,9 @@ Wordpress
           <div class="row">
             <div class="col-md-4">
               <div class="contact">
-                <img src="../images/foto-placer.jpg" alt="">
-                <ul class="no-list">
+                <div id="me" class="sprite-photo">
+                </div>
+                <ul class="no-list lightup">
                   <li class="full-l">
                     <span class="icon-phone2"></span>
                     500 289 630
@@ -547,7 +566,7 @@ Wcześniej PC użytkowałem głównie w celach rozrywkowych..</p>
               <article class="blog-item">
 
                 <a class="preview" href="#">
-                  <img src="//i.ytimg.com/vi/BsaD-BadB9M/hqdefault.jpg" alt="" aria-hidden="">
+                  <img src="http://i.ytimg.com/vi/BsaD-BadB9M/hqdefault.jpg" alt="" aria-hidden="">
                 </a>
                 
                 <div class="article-content">
@@ -585,10 +604,93 @@ Wcześniej PC użytkowałem głównie w celach rozrywkowych..</p>
         </div>
       </section>
 
+      <footer class="home scrollme">
+        <div class="container">
+          <div class="row border-bd">
+            <div class="col-xs-12">
+              <div class="content pos-point">
+                <ul class="no-list">
+                  <li>
+                    <span class="icon-spaceinvaders first animateme"
+                      data-when="span"
+                      data-from="1"
+                      data-to="0"
+                      data-translatex="200"
+                      data-easing="linear"
+                    ></span>
+                  </li>
+                  <li>
+                    <span class="icon-spaceinvaders second animateme"
+                      data-when="span"
+                      data-from="0.9"
+                      data-to="0"
+                      data-translatey="-130"
+                      data-easing="linear"
+                    ></span>
+                  </li>
+                  <li>
+                    <span class="icon-spaceinvaders third animateme hidden-mobile"
+                      data-when="span"
+                      data-from="1"
+                      data-to="0"
+                      data-translatex="-200"
+                      data-easing="linear"
+                    ></span>
+                  </li>
+                  <li>
+                    <span class="icon-spaceinvaders fourth animateme"
+                      data-when="span"
+                      data-from="1"
+                      data-to="0"
+                      data-translatey="150"
+                      data-easing="linear"
+                    ></span>
+                  </li>
+                  <li>
+                    <span class="icon-diamond fifth"></span>
+                  </li>
+                  <li>
+                    <span class="icon-diamond sixth"></span>
+                  </li>
+                  <li>
+                    <span class="icon-pacman seventh animateme"
+                      data-when="span"
+                      data-from="0.9"
+                      data-to="0"
+                      data-translatex="-200"
+                      data-easing="linear"
+                    ></span>
+                  </li>
+                </ul>
+                <div class="game-over border-bd animateme"
+                    data-when="enter"
+                    data-from="1"
+                    data-to="0.8"
+                    data-scale="0"
+                    data-easing="easeinout"
+                >
+                  <p>Game over</p>
+                  <span class="baton pull-left">
+                    <span class="icon-warning"></span>
+                    Być może zainteresuje Cię coś z menu..
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="copy">
+                &copy;Mateusz Skorupa 2014
+              </div>
+            </div>
+          </div>
+        </div>  
+      </footer>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
@@ -604,6 +706,8 @@ Wcześniej PC użytkowałem głównie w celach rozrywkowych..</p>
     <script src="bower_components/jquery.easing/js/jquery.easing.js"></script>
     <script src="bower_components/parallax/deploy/jquery.parallax.js"></script>
     <script src="bower_components/scrollme/jquery.scrollme.min.js"></script>
+    <script src="bower_components/nicescroll/jquery.nicescroll.js"></script>
+    <script src="bower_components/mixitup2/src/jquery.mixitup.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
