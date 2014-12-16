@@ -112,6 +112,12 @@ function mMenu(){
     $('.navigation').toggleClass('open');
   });
 }
+function pFilters(){
+  $('#filter-trigger').click(function(){
+    $(this).toggleClass('active');
+    $('.portfolio-filters').toggleClass('open');
+  });
+}
 // Short script to encode our SVG in base64
 function svGrund() {
   
@@ -383,6 +389,7 @@ $(document).ready(function () {
   gameOver();
   startPhoto();
   mMenu();
+  pFilters();
 
   $('#scene').parallax({
      invertX: false,
@@ -402,7 +409,6 @@ $(document).ready(function () {
   // portfolio filters and sort -MixItUp2
   if($('#mix-container').length) {
     $('#mix-container').mixItUp();
-
   }
   // execute only on home page
    if($('body').hasClass('home') === true){

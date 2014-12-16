@@ -188,7 +188,7 @@
 		.main-content {
 			header {
 				margin-bottom: 15px;
-				h2 {
+				h1, h2, p {
 					font-size: 20px;
 				}
 				span {
@@ -410,6 +410,41 @@
 		.portfolio-box {
 			width: 100%;
 		}
+		.portfolio-filters {
+			max-height: 0;
+			@include transition(all 0.9s);
+			&.open {
+				max-height: 800px;
+			}
+		}
+		#filter-trigger {
+			display: block;
+		}
+		#kind-filter {
+			width: 100%;
+			float: left;
+			margin-bottom: 10px;
+			li {
+				float: left;
+				margin: 0 5px 5px 0;
+				padding: 0 10px;
+				background-color: $nx-col;
+				color: $bg-col;
+				font-size: 16px;
+				line-height: 36px;
+					}
+		}
+		.witget {
+			width: 100%;
+			margin-bottom: 10px;
+		}
+		#tech-filter {
+			ul {
+				li {
+					padding: 6px 5px;
+				}
+			}
+		}
 		/*FOOTER*/
 		footer {
 			margin-top: 0;
@@ -465,7 +500,7 @@
 			margin-top: 40px;
 			header {
 				margin-bottom: 10px;
-				h2 {
+				h1, h2, p {
 					font-size: 18px;
 				}
 			span {

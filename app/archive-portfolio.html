@@ -104,13 +104,21 @@
 
           <div class="row">
             <header class="col-xs-12">
-              <span class="icon-diamond"></span>
-              <h1>Portfolio</h1>
+              <div class="half">
+                <span class="icon-diamond"></span>
+                <h1>Portfolio</h1>
+              </div>
+
+              <div id="filter-trigger" class="half">
+                <span class="icon-cabinet pull-right"></span>
+                <p>fliltruj</p>
+              </div>    
             </header>
           </div>
 
           <div class="row">
           <div class="col-xs-12 col-sm-3">
+            <div class="portfolio-filters">
               <ul id="kind-filter" class="no-list">
                 <li class="filter" data-filter="all">Wszystkie</li>
                 <li class="filter" data-filter=".design">Design</li>
@@ -119,17 +127,29 @@
                 <li class="filter" data-filter=".onepage">Onepage</li>
                 <li class="filter" data-filter=".wordpress">Wordpress</li>
               </ul>
-              <div id="time-sort">
-                <span class="icon-calendar"></span>
+              <div id="time-sort" class="witget">
+                <header class="mini">
+                  <span class="icon-hourglass"></span>
+                  <h3>Kolejność</h3>
+                </header>
+                
                 <div class="sort" data-sort="myorder:asc">Nowe</div>
                 <div class="sort" data-sort="myorder:desc">Stare</div>
               </div>
 
-              <div id="tech-filter">
-                <ul>
+              <div id="tech-filter" class="witget">
+                <header class="mini">
+                  <span class="icon-atom"></span>
+                  <h3>Technologie</h3>
+                </header>
+                <ul class="no-list">
                   <li class="filter" data-filter=".bootstrap">Bootstrap</li>
+                  <li class="filter" data-filter=".grunt">Grunt</li>
+                  <li class="filter" data-filter=".font-icon">font-icon</li>
+                  <li class="filter" data-filter=".sass">sass</li>
                 </ul>
               </div>
+            </div>
           </div>
           <div id="mix-container" class="col-xs-12 col-sm-9">
             <div class="mix design portfolio-box" data-myorder="2">
