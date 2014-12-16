@@ -254,6 +254,18 @@
 		.portfolio-box {
 			width: 50%;
 		}
+		.portfolio-filters {
+			header.mini {
+				margin-bottom: 5px;
+				h3 {
+					font-size: 16px;
+				}
+				span {
+				margin-right: 3px;
+				font-size: 30px;
+			}
+			}
+		}
 	}
 
     /* Small Devices, Tablets */
@@ -447,7 +459,7 @@
 		}
 		/*FOOTER*/
 		footer {
-			margin-top: 0;
+			margin-top: 10px;
 		.content {
 			ul > li > span {
 				&.third {
@@ -541,7 +553,7 @@
     	.info-box.portfolio-item {
 			height: 270px;	
 		}
-    	/*PARALLAX*/
+    	/*PARALLAX, FOOTER*/
     	.hidden-mobile {
     		display: none;
     	}
@@ -559,6 +571,8 @@
 
     /* Custom, iPhone Retina */ 
     @media only screen and (max-width : 320px) {
-        
+        .hidden-xs-mobile {
+        	display: none;
+        }
     }
 
