@@ -112,10 +112,10 @@ function mMenu(){
     $('.navigation').toggleClass('open');
   });
 }
-function pFilters(){
+function blogyFilters(){
   $('#filter-trigger').click(function(){
     $(this).toggleClass('active');
-    $('.portfolio-filters').toggleClass('open');
+    $('.filters-container').toggleClass('open');
   });
 }
 // Short script to encode our SVG in base64
@@ -389,7 +389,7 @@ $(document).ready(function () {
   gameOver();
   startPhoto();
   mMenu();
-  pFilters();
+  blogyFilters();
 
   $('#scene').parallax({
      invertX: false,

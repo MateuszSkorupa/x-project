@@ -849,7 +849,7 @@ a:focus {
 		}
 	}	
 }
-.portfolio-filters {
+.filters-container {
 	overflow: hidden;
 }
 #filter-trigger {
@@ -891,7 +891,13 @@ a:focus {
 }
 .witget {
 	overflow: hidden;
-	margin-bottom: 30px;
+	margin-bottom: 15px;
+	#kind-filter {
+		float: left;		
+	}
+	header.mini {
+		margin-bottom: 10px;
+	}
 }
 #time-sort {
 	.sort {
@@ -1035,7 +1041,79 @@ a:focus {
 		}
 	}	
 }
-
+#kind-filter.blog {
+	li {
+		padding: 0;
+		a {
+			display: block;
+			padding: 0 15px;
+			background-color: $nx-col;
+			color: $bg-col;
+			line-height: 40px;
+			@include transition(all 0.250s);
+			&.active,
+			&:hover {
+			color: #fff;
+			background-color: $tx-col;
+			}
+		}
+	}
+}
+.witget {
+	#kind-filter.blog {
+		margin: 0;
+		li {
+			margin: 0 5px 5px 0;
+			float: left;
+			font-size: 14px;
+			a {
+			padding: 0 8px;
+			line-height: 30px;
+			&.active,
+			&:hover {
+			color: $bg-col;
+			background-color: #fff;
+			}
+		}
+	}
+	&.tags {
+		li {
+			font-size: 13px;
+			a {
+			padding: 0 5px;
+			line-height: 24px;			
+			&.active,
+			&:hover {
+			color: $tx-col;
+			background-color: #fff;
+					}
+				}
+			}
+		}
+	}
+}
+.blogy-nav {
+	float: left;
+	width: 100%;
+	text-align: center;
+	a {
+		position: relative;
+		text-transform: uppercase;
+		color: $nx-col;
+		@include transition(all 0.250s);
+		&:hover {
+			color: $tx-col;
+		}
+		span {
+			position: absolute;
+			top: -6px;	
+			font-size: 25px;
+			&.prev {
+				left: -33px;
+			}
+		}
+	}
+}
 /*************************
 ***********FOOTER*********
 *************************/
@@ -1111,6 +1189,7 @@ footer {
 }
 /* second footer */
 footer.main-content {
+	margin-top: 20px;
 	header.mini {
 		margin: 10px 0 5px 0;
 		h3 {
@@ -1139,16 +1218,6 @@ footer.main-content {
 					[class^="icon-"],
 					[class*=" icon-"] {
 						font-size: 30px;
-					}
-				}
-				.baton {
-					width: 48px;
-					margin: 0;
-					padding: 5px;
-					text-align: center;
-					span {
-						float: none;
-						margin: 0;
 					}
 				}
 			}

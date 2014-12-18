@@ -79,39 +79,26 @@
                 </li>
               </ul>
             </li>
-            <li class="active"><a href="archive-portfolio.html">portfolio</a></li>
-            <li><a href="archive-blog.html">blog</a></li>
+            <li><a href="archive-portfolio.html">portfolio</a></li>
+            <li class="active"><a href="archive-blog.html">blog</a></li>
           </ul>
         </div>
       </div>
     </nav>
     
-      <div id="single-portfolio-landing">
-      <!-- here goes AJAX code -->
-       <!-- <div class="ajaxload">
-          <div class='box3d'>
-                <div class='p1'></div>
-                <div class='p2'></div>
-                <div class='p3'></div>
-                <div class='p4'></div>
-                <div class='p5'></div>
-                <div class='p6'></div>
-          </div>
-        </div> -->
-      </div> 
       <section class="main-content">
         <div class="container">
 
           <div class="row">
             <header class="col-xs-12">
               <div class="half">
-                <span class="icon-diamond"></span>
-                <h1>Portfolio</h1>
+                <span class="icon-pacman"></span>
+                <h1>Blog</h1>
               </div>
 
               <div id="filter-trigger" class="half">
                 <span class="icon-magnet pull-right"></span>
-                <p>filtruj projekty</p>
+                <p>filtruj posty</p>
               </div>    
             </header>
           </div>
@@ -119,239 +106,186 @@
           <div class="row">
           <div class="col-xs-12 col-sm-3">
             <div class="filters-container">
-              <ul id="kind-filter" class="no-list">
-                <li class="filter" data-filter="all">Wszystkie</li>
-                <li class="filter" data-filter=".design">Design</li>
-                <li class="filter" data-filter=".rwd">RWD</li>
-                <li class="filter" data-filter=".seo">SEO</li>
-                <li class="filter" data-filter=".onepage">Onepage</li>
-                <li class="filter" data-filter=".wordpress">Wordpress</li>
+              <ul id="kind-filter" class="no-list blog">
+                <li>
+                  <a href="">Wszystkie</a>
+                </li>
+                <li>
+                  <a href="">Animacje</a>
+                </li>
+                <li>
+                  <a href="">Programowanie</a>
+                </li>
+                <li>
+                  <a href="">Trening</a>
+                </li>
               </ul>
-              <div id="time-sort" class="witget">
+              <div class="witget">
                 <header class="mini">
-                  <span class="icon-hourglass"></span>
-                  <h3>Kolejność</h3>
+                  <span class="icon-archive"></span>
+                  <h3>Archiwalne</h3>
                 </header>
                 
-                <div class="sort" data-sort="myorder:asc">Nowe</div>
-                <div class="sort" data-sort="myorder:desc">Stare</div>
+                <ul id="kind-filter" class="no-list blog">
+                  <li>
+                    <a href="">grudzień, 2014</a>
+                  </li>
+                  <li>
+                    <a href="">listopad, 2014</a>
+                  </li>
+                  <li>
+                    <a href="">wrzesień, 2014</a>
+                  </li>
+                  <li>
+                    <a href="">październik, 2014</a>
+                  </li>
+                </ul>
               </div>
 
-              <div id="tech-filter" class="witget">
+              <div class="witget">
                 <header class="mini">
-                  <span class="icon-atom"></span>
-                  <h3>Technologie</h3>
+                  <span class="icon-tag"></span>
+                  <h3>Tagi</h3>
                 </header>
-                <ul class="no-list">
-                  <li class="filter" data-filter=".bootstrap">Bootstrap</li>
-                  <li class="filter" data-filter=".grunt">Grunt</li>
-                  <li class="filter" data-filter=".font-icon">font-icon</li>
-                  <li class="filter" data-filter=".sass">sass</li>
+                
+                <ul id="kind-filter" class="no-list blog tags">
+                  <li>
+                    <a href="">grudzień, 2014</a>
+                  </li>
+                  <li>
+                    <a href="">listopad, 2014</a>
+                  </li>
+                  <li>
+                    <a href="">wrzesień, 2014</a>
+                  </li>
+                  <li>
+                    <a href="">październik, 2014</a>
+                  </li>
                 </ul>
               </div>
             </div>
           </div>
-          <div id="mix-container" class="col-xs-12 col-sm-9">
-            <div class="mix design portfolio-box" data-myorder="2">
-              <div class="info-box portfolio-item first">
-      
+          <div class="col-xs-12 col-sm-9">
+            <article class="blog-item">
+
+                <a class="preview" href="#">
+                  <img src="http://i.ytimg.com/vi/BsaD-BadB9M/hqdefault.jpg" alt="" aria-hidden="">
+                </a>
                 
-                <div class="inner front">
-                  <h4>Tłumacz języka angielskiego Monika Wojtkiewicz</h4>
-                  <p>
-                    <span class="icon-ruler"></span>
-                    Design, RWD, SEO, onepage,
-                    Wordpress, Danger 
-                  </p>
-                  <p>
-                    <span class="icon-rocket2"></span>
-                    Październik, 2014 
-                  </p>
-                  <a class="baton portfolio-link" href="single-portfolio.html">
-                      <span class="icon-switch"></span>
-                      Zobacz więcej szczegółów tego projektu.
-                  </a>
-                </div>
-              </div>   
-            </div>
-            <div class="mix seo rwd bootstrap portfolio-box" data-myorder="5">
-              <div class="info-box portfolio-item second">
-                 
-                <div class="inner front">
-                  <h4>Tłumacz języka angielskiego Monika Wojtkiewicz</h4>
-                  <p>
-                    <span class="icon-ruler"></span>
-                    Design, RWD, SEO, onepage,
-    Wordpress 
-                  </p>
-                  <p>
-                    <span class="icon-rocket2"></span>
-                    Październik, 2014 
-                  </p>
-                  <a class="baton portfolio-link" href="single-portfolio.html">
-                      <span class="icon-switch"></span>
-                      Zobacz więcej szczegółów tego projektu.
-                  </a>
-                  
-                </div>
-              </div>
-            </div>
-            <div class="mix onepage seo design portfolio-box" data-myorder="1">
-              <div class="info-box portfolio-item third">
+                <div class="article-content">
+                  <h4 class="article-title">
+                    <a href="#">Tytuł artykułu</a>
+                  </h4> 
+
+                  <div class="article-info">
+                    <span class="article-date">
+                      <span class="icon-calendar"></span>
+                        <a href="#">  
+                        21.11.2014
+                        </a>
+                    </span>
+                    
+                    <span class="tags">
+                      <span class="icon-tag"></span>
+                      <a href="">tag</a><span>, </span>
+                      <a href="">tag</a><span>, </span>
+                      <a href="">tag</a><span>, </span>
+                      <a href="">tag</a>
+                    </span>
+                  </div>
                 
-                <div class="inner front">
-                  <h4>Tłumacz języka angielskiego Monika Wojtkiewicz</h4>
-                  <p>
-                    <span class="icon-ruler"></span>
-                   Design, RWD, SEO, onepage,
-    Wordpress 
-                  </p>
-                  <p>
-                    <span class="icon-rocket2"></span>
-                    Październik, 2014 
-                  </p>
-                  <a class="baton portfolio-link" href="single-portfolio.html">
-                      <span class="icon-switch"></span>
-                      Zobacz więcej szczegółów tego projektu.
-                  </a>
-                  
+                  <p>Strony internetowe zacząłem tworzyć w 2011 roku. Nie kończyłem żadnej szkoły związanej z technologiami internetowymi. Wszystkiego od podstaw uczyłem się głównie z kursów video oraz z materiałów dostępnych w sieci. Wcześniej PC użytkowałem głównie w celach rozrywkowych..</p>
                 </div>
-            </div>
+                
+                <a class="baton" href="">
+                  <span class="icon-dglasses"></span>
+                  Zobacz artykuł w całości.
+                </a>
+              </article>
+              <article class="blog-item">
 
+                <a class="preview" href="#">
+                  <img src="http://i.ytimg.com/vi/BsaD-BadB9M/hqdefault.jpg" alt="" aria-hidden="">
+                </a>
+                
+                <div class="article-content">
+                  <h4 class="article-title">
+                    <a href="#">Tytuł artykułu</a>
+                  </h4> 
 
-          </div>
-          <div class="mix design portfolio-box" data-myorder="6">
-              <div class="info-box portfolio-item first">
-      
-                <div class="inner front">
-                  <h4>Tłumacz języka angielskiego Monika Wojtkiewicz</h4>
-                  <p>
-                    <span class="icon-ruler"></span>
-                    Design, RWD, SEO, onepage,
-                    Wordpress, Danger 
-                  </p>
-                  <p>
-                    <span class="icon-rocket2"></span>
-                    Październik, 2014 
-                  </p>
-                  <a class="baton portfolio-link" href="single-portfolio.html">
-                      <span class="icon-switch"></span>
-                      Zobacz więcej szczegółów tego projektu.
-                  </a>
+                  <div class="article-info">
+                    <span class="article-date">
+                      <span class="icon-calendar"></span>
+                        <a href="#">  
+                        21.11.2014
+                        </a>
+                    </span>
+                    
+                    <span class="tags">
+                      <span class="icon-tag"></span>
+                      <a href="">tag</a><span>, </span>
+                      <a href="">tag</a><span>, </span>
+                      <a href="">tag</a><span>, </span>
+                      <a href="">tag</a>
+                    </span>
+                  </div>
+                
+                  <p>Strony internetowe zacząłem tworzyć w 2011 roku. Nie kończyłem żadnej szkoły związanej z technologiami internetowymi. Wszystkiego od podstaw uczyłem się głównie z kursów video oraz z materiałów dostępnych w sieci. Wcześniej PC użytkowałem głównie w celach rozrywkowych..</p>
                 </div>
-              </div>   
-            </div>
-            <div class="mix wordpress bootstrap seo rwd portfolio-box" data-myorder="3">
-              <div class="info-box portfolio-item second">
-                 
-                <div class="inner front">
-                  <h4>Tłumacz języka angielskiego Monika Wojtkiewicz</h4>
-                  <p>
-                    <span class="icon-ruler"></span>
-                    Design, RWD, SEO, onepage,
-    Wordpress 
-                  </p>
-                  <p>
-                    <span class="icon-rocket2"></span>
-                    Październik, 2014 
-                  </p>
-                  <a class="baton portfolio-link" href="single-portfolio.html">
-                      <span class="icon-switch"></span>
-                      Zobacz więcej szczegółów tego projektu.
-                  </a>
-                  
+                
+                <a class="baton" href="">
+                  <span class="icon-dglasses"></span>
+                  Zobacz artykuł w całości.
+                </a>
+              </article>
+              <article class="blog-item">
+
+                <a class="preview" href="#">
+                  <img src="http://i.ytimg.com/vi/BsaD-BadB9M/hqdefault.jpg" alt="" aria-hidden="">
+                </a>
+                
+                <div class="article-content">
+                  <h4 class="article-title">
+                    <a href="#">Tytuł artykułu</a>
+                  </h4> 
+
+                  <div class="article-info">
+                    <span class="article-date">
+                      <span class="icon-calendar"></span>
+                        <a href="#">  
+                        21.11.2014
+                        </a>
+                    </span>
+                    
+                    <span class="tags">
+                      <span class="icon-tag"></span>
+                      <a href="">tag</a><span>, </span>
+                      <a href="">tag</a><span>, </span>
+                      <a href="">tag</a><span>, </span>
+                      <a href="">tag</a>
+                    </span>
+                  </div>
+                
+                  <p>Strony internetowe zacząłem tworzyć w 2011 roku. Nie kończyłem żadnej szkoły związanej z technologiami internetowymi. Wszystkiego od podstaw uczyłem się głównie z kursów video oraz z materiałów dostępnych w sieci. Wcześniej PC użytkowałem głównie w celach rozrywkowych..</p>
                 </div>
+                
+                <a class="baton" href="">
+                  <span class="icon-dglasses"></span>
+                  Zobacz artykuł w całości.
+                </a>
+              </article>
+              
+              <div class="blogy-nav">
+                <a href="">
+                  <span class="icon-backward prev"></span>
+                  Wcześniejsze
+                </a>
+                <span></span>
+                <a href="">
+                  Następne
+                  <span class="icon-forward next"></span>         
+                </a>
               </div>
-            </div>
-            <div class="mix seo design portfolio-box" data-myorder="9">
-              <div class="info-box portfolio-item third">
-        
-                <div class="inner front">
-                  <h4>Tłumacz języka angielskiego Monika Wojtkiewicz</h4>
-                  <p>
-                    <span class="icon-ruler"></span>
-                   Design, RWD, SEO, onepage,
-    Wordpress 
-                  </p>
-                  <p>
-                    <span class="icon-rocket2"></span>
-                    Październik, 2014 
-                  </p>
-                  <a class="baton portfolio-link" href="single-portfolio.html">
-                      <span class="icon-switch"></span>
-                      Zobacz więcej szczegółów tego projektu.
-                  </a>
-                  
-                </div>
-            </div>
-
-            
-          </div>
-          <div class="mix design portfolio-box" data-myorder="4">
-              <div class="info-box portfolio-item first">
-      
-                <div class="inner front">
-                  <h4>Tłumacz języka angielskiego Monika Wojtkiewicz</h4>
-                  <p>
-                    <span class="icon-ruler"></span>
-                    Design, RWD, SEO, onepage,
-                    Wordpress, Danger 
-                  </p>
-                  <p>
-                    <span class="icon-rocket2"></span>
-                    Październik, 2014 
-                  </p>
-                  <a class="baton portfolio-link" href="single-portfolio.html">
-                      <span class="icon-switch"></span>
-                      Zobacz więcej szczegółów tego projektu.
-                  </a>
-                </div>
-              </div>   
-            </div>
-            <div class="mix seo rwd portfolio-box" data-myorder="7">
-              <div class="info-box portfolio-item second">
-          
-                <div class="inner front">
-                  <h4>Tłumacz języka angielskiego Monika Wojtkiewicz</h4>
-                  <p>
-                    <span class="icon-ruler"></span>
-                    Design, RWD, SEO, onepage,
-    Wordpress 
-                  </p>
-                  <p>
-                    <span class="icon-rocket2"></span>
-                    Październik, 2014 
-                  </p>
-                  <a class="baton portfolio-link" href="single-portfolio.html">
-                      <span class="icon-switch"></span>
-                      Zobacz więcej szczegółów tego projektu.
-                  </a>
-                  
-                </div>
-              </div>
-            </div>
-            <div class="mix seo design portfolio-box" data-myorder="8">
-              <div class="info-box portfolio-item third">
-    
-                <div class="inner front">
-                  <h4>Tłumacz języka angielskiego Monika Wojtkiewicz</h4>
-                  <p>
-                    <span class="icon-ruler"></span>
-                   Design, RWD, SEO, onepage,
-    Wordpress 
-                  </p>
-                  <p>
-                    <span class="icon-rocket2"></span>
-                    Październik, 2014 
-                  </p>
-                  <a class="baton portfolio-link" href="single-portfolio.html">
-                      <span class="icon-switch"></span>
-                      Zobacz więcej szczegółów tego projektu.
-                  </a>
-                  
-                </div>
-            </div>
-
             
           </div>
           

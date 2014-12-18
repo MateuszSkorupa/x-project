@@ -266,6 +266,11 @@
 			}
 			}
 		}
+		#kind-filter {
+			li {
+				font-size: 15px;
+			}
+		}
 	}
 
     /* Small Devices, Tablets */
@@ -422,7 +427,7 @@
 		.portfolio-box {
 			width: 100%;
 		}
-		.portfolio-filters {
+		.filters-container {
 			max-height: 0;
 			@include transition(all 0.9s);
 			&.open {
@@ -454,6 +459,40 @@
 			ul {
 				li {
 					padding: 6px 5px;
+				}
+			}
+		}
+		/*BLOG*/
+		.witget {
+			#kind-filter.blog {
+				li {
+					font-size: 14px;
+					a {
+					padding: 0 8px;
+					line-height: 34px;
+				}
+			}
+			&.tags {
+				li {
+					font-size: 14px;
+					a {
+					padding: 0 8px;
+					line-height: 34px;		
+						}
+					}
+				}
+			}
+		}
+		.blogy-nav {
+			a {
+				color: $tx-col;
+				span {
+					position: absolute;
+					top: -13px;	
+					font-size: 40px;
+					&.prev {
+						left: -50px;
+					}
 				}
 			}
 		}
