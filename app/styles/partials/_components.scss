@@ -39,6 +39,10 @@ a:focus {
 	float: left;
 	width: 50% !important;
 }
+.forth-fifth {
+	float: left;
+	width: 80% !important;
+}
 .border-b {
 	border-bottom: 1px solid $tx-col;
 }
@@ -120,6 +124,7 @@ a:focus {
 	#menu {
 		float: left;
 		position: relative;
+		background: $bg-col;
 		z-index: 1;
 		> li:hover .hover-menu {
 		display: block;
@@ -141,6 +146,7 @@ a:focus {
 		top: 61px;
 		display: none;
 		background: $bg-col;
+		border-top: 1px solid $tx-col;
 		li {
 			padding: 8px;
 			@include transition-property(all);
@@ -1041,6 +1047,65 @@ a:focus {
 		}
 	}	
 }
+.blog-item-full {
+	img {
+		float: left;
+		width: 100%;
+		margin: 0;
+	}
+	.article-content {
+		float: left;
+		width: 100%;
+			img {
+				max-width: 100%;
+				margin-top: 20px;
+			}
+			p {
+				margin-top: 20px;
+			}
+			strong {
+				font-size: 17px;
+				line-height: 15px;
+				text-transform: uppercase;
+			}
+			a {
+				color: #fff;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+			ul {
+				padding-left: 28px;
+			}
+			table {
+				tr {
+					td {
+						border: 1px solid $tx-col;
+						padding: 5px;
+					}
+				}
+			}
+			code {
+				float: left;
+				margin-top: 20px;
+				padding: 15px;
+				background: $tx-col;
+				color: #fff;
+			}
+	}
+	.baton {
+		margin-top: 20px;
+		color: #fff;
+			&:hover {
+				color: $bg-col;
+			}
+		}
+		
+}
+.info {
+	float: left;
+	width: 20%;
+}
 #kind-filter.blog {
 	li {
 		padding: 0;
@@ -1060,6 +1125,23 @@ a:focus {
 	}
 }
 .witget {
+	h2 , p {
+		float: left;
+		width: 100%;
+		margin: 0 5px 5px 0;
+		padding: 0 8px;
+		background: #fff;
+		font-size: 18px;
+		color: $bg-col;
+		line-height: 40px;
+		text-transform: uppercase;		
+	}
+	> p {
+		width: auto;
+		padding: 0 6px;
+		font-size: 16px;
+		line-height: 36px;	
+	}
 	#kind-filter.blog {
 		margin: 0;
 		li {
@@ -1090,8 +1172,29 @@ a:focus {
 				}
 			}
 		}
+	&.posts {
+			li {
+				display: inline;
+				font-size: 14px;
+				line-height: 0;
+				&:hover {
+					background-color: $nx-col;
+				}
+				a {
+				display: inline;
+				background: none;
+				padding: 0;
+				color: #fff;
+				line-height: 1.2;			
+				&.active,
+				&:hover {
+				color: $tx-col;
+						}
+					}
+				}
+			}
+		}
 	}
-}
 .blogy-nav {
 	float: left;
 	width: 100%;
@@ -1195,8 +1298,9 @@ footer.main-content {
 		h3 {
 			font-size: 15px;
 		}
-	}
-	.footer-box {
+	}	
+}
+.mini-box {
 		display: block;
 		overflow: hidden;
 		width: 100%;
@@ -1223,4 +1327,3 @@ footer.main-content {
 			}
 		}	
 	}
-}

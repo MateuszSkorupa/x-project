@@ -306,6 +306,7 @@
 			#menu {
 				float: none;
 				position: relative;
+				top: 1px;
 				z-index: 1;
 			}
 		}
@@ -314,6 +315,7 @@
 			position: static;
 			display: block;
 			overflow: hidden;
+			border-top: none;
 			@include transition(all 0.9s);
 			li {
 				padding-left: 15px;
@@ -481,6 +483,14 @@
 						}
 					}
 				}
+			&.posts {
+			li {
+				a {
+					display: block;
+					padding: 9px;		
+					}
+				}
+			}
 			}
 		}
 		.blogy-nav {

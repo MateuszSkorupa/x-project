@@ -348,6 +348,15 @@ $(document).on('click', '#switch', function() {
     $('#single-portfolio-landing').html('');
 });
 
+$(document).on('click','#gostart', function(e) {
+      e.preventDefault();
+      $('.scrollable').animate(
+        {scrollTop:0}, {
+                    duration: 4000,
+                    easing: 'easeOutBounce'
+          });
+      });
+
 // trigger functions
 $(document).ready(function () {
   // AJAX
