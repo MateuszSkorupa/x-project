@@ -65,15 +65,15 @@ svg {
 
 @-webkit-keyframes clickor
 {
-    0%{background: $bg-col; color: $tx-col;}
-    50%{background: $tx-col; color: $bg-col;}
-    100%{background: $bg-col; color: $tx-col;}
+    0%{background-color: $bg-col; color: $tx-col;}
+    50%{background-color: $tx-col; color: $bg-col;}
+    100%{background-color: $bg-col; color: $tx-col;}
 }  
 @keyframes clickor
 {
-    0%{background: $bg-col; color: $tx-col;}
-    50%{background: $tx-col; color: $bg-col;}
-    100%{background: $bg-col; color: $tx-col;}
+    0%{background-color: $bg-col; color: $tx-col;}
+    50%{background-color: $tx-col; color: $bg-col;}
+    100%{background-color: $bg-col; color: $tx-col;}
 }
 
 /*==================================================

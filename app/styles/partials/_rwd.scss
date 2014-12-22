@@ -287,6 +287,7 @@
     		width: 100%;
     		max-height: 0;
 			position: relative;
+			top: 1px;
 			float: left;
 			overflow: hidden;
 			@include transition(all 0.9s);
@@ -306,7 +307,6 @@
 			#menu {
 				float: none;
 				position: relative;
-				top: 1px;
 				z-index: 1;
 			}
 		}
@@ -595,6 +595,11 @@
 				.custom-fields {
 				> p {
 					width: 100%;
+					margin: 0;
+					[class^="icon-"],
+					[class*=" icon-"] {
+						height: 70px;
+						}
 					}
 				}
 			}

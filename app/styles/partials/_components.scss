@@ -49,6 +49,25 @@ a:focus {
 .border-t {
 	border-top: 1px solid $tx-col;
 }
+.underconstruction {
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: $tx-col;
+			color: $bg-col;
+			line-height: 40px;
+			@include opacity(0.9);
+			z-index: 5;
+			span.icon-tools {
+				font-size: 36px;
+				}
+				&.opened {
+					display: none;
+				}
+			}
 /*************************
 ************MENU**********
 *************************/
@@ -124,7 +143,6 @@ a:focus {
 	#menu {
 		float: left;
 		position: relative;
-		background: $bg-col;
 		z-index: 1;
 		> li:hover .hover-menu {
 		display: block;
@@ -148,11 +166,13 @@ a:focus {
 		background: $bg-col;
 		border-top: 1px solid $tx-col;
 		li {
+			position: relative;
 			padding: 8px;
 			@include transition-property(all);
   			@include transition-duration(0.250s);
 			&:hover {
 				background: $tx-col;
+			
 			}
 			&:hover a {
 				color: $bg-col;
@@ -177,6 +197,7 @@ a:focus {
 			color: #fff;
 			font-size: 12px;
 		}
+		
 	}
 /* magic line */
 #magic-line {
