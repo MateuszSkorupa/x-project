@@ -18,6 +18,9 @@ a:focus {
 	text-decoration: none;
 	outline: none;
 	}
+input:focus, textarea:focus, keygen:focus, select:focus {
+outline: none;
+}
 .no-list {
 	list-style: none;
 	padding: 0;
@@ -575,7 +578,10 @@ a:focus {
 .main-content {
 	margin-top: 75px;
 	header {
+		width: 100%;
+		float: left;
 		margin-bottom: 20px;
+			h3,
 			h2,
 			h1,
 			p {
@@ -683,6 +689,7 @@ a:focus {
 	width: 100%;
 	text-align: center;
 	z-index: 1040;
+	color: #fff;
 }
 #single-portfolio-landing {
 	width: 100%;

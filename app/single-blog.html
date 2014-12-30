@@ -5,7 +5,26 @@
     <title>x project</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <link rel="shortcut icon" href="/favicon.ico">
+    
+    <!-- favicon declarations -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicon-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <meta name="msapplication-TileColor" content="#1d181f">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <!--end favicon declarations -->
+    
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -201,19 +220,113 @@
                       <td>dffddf</td>
                     </tr>
                   </table>
-                  <code>fgddddddddddddddddddddddddddddddddddddddffgfgfnngggng</br>
+                  <code>fgdddddddddddddddddddddddd ddddddddddddddffgfgfnngggng</br>
                     ghhhhhhhhhhhhhhhhhhhh
                   </code>
-                  <code>fgddddddddddddddddddddddddddddddddddddddffgfgfnngggng</br>
+                  <code>fgddddddddddddddddddddddddddd dddddddddddffgfgfnngggng</br>
                     ghhhhhhhhhhhhhhhhhhhh
                   </code>
                 </div>
                 
-                <a class="baton pull-left" href="">
+                <a class="baton" href="">
                   <span class="icon-reply"></span>
                   Wróć na stronę Bloga 
                 </a>
               </article>
+
+              <!-- comments  -->
+              <div class="comments">
+                        <header>
+                            <span class="icon-comments"></span>
+                            <h3>Komentarze</h3>
+                        </header>
+
+                        <div class="comments-list">
+                            <div class="comment parent">
+                                <div class="inner">
+                                    <img src="images/avatar-janusz.png" alt="">                
+                                    <ul class="author">
+                                          <li class="written">Zenek</li>
+                                          <li class="time">
+                                            <span class="icon-calendar"></span>
+                                            <span class="value">20:23, 04.07.2014</span>
+                                            
+                                          </li>
+                                        </ul>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed magna orci, eget egestas tellus. Mauris id lectus lorem, et condimentum est.</p>
+                                </div>
+
+                                <div class="comment">
+
+                                    <div class="inner">
+                                        <img src="images/pacman.png" alt="">                
+                                        <ul class="author">
+                                          <li class="written">Zenek</li>
+                                          <li class="time">
+                                            <span class="icon-calendar"></span>
+                                            <span class="value">20:23, 04.07.2014</span>
+                                            
+                                          </li>
+                                        </ul>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed magna orci, eget egestas tellus. Mauris id lectus lorem, et condimentum est.</p>
+
+                                        
+                                        <div class="comment-awaiting-moderation">
+                                          
+                                            <span class="icon-notice"></span>
+                                            <p>Twój komentarz oczekuje na moderację!</p>
+                                        </div>
+                                    </div>
+                                    <a class="replay" href="">
+                                            Odpowiedz
+                                            <span class="icon-forward2"></span>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <p class="no-comments">Ten wpis nie posiada jeszcze żadnych komentarzy.</p>
+                        </div>
+                        
+                        <div class="blogy-nav">
+                          <a href="">
+                            <span class="icon-backward prev"></span>
+                            Wcześniejsze
+                          </a>
+                          <span></span>
+                          <a href="">
+                            Następne
+                            <span class="icon-forward next"></span>         
+                          </a>
+                        </div>
+
+                        <div id="respond">
+
+                            <header>
+                              <span class="icon-plus3"></span>
+                              <h3>Dodaj swój komentarz...</h3>
+                            </header>
+
+                            <div class="cancel-comment-reply">
+                                <a style="display:none;" href="#" rel="nofollow">Kliknij tutaj, aby anulować odpowiadanie.</a>
+                            </div>
+
+
+                            <form id="commentform" method="post" action="#">
+
+                                <input type="text" name="author" placeholder="Imię i Nazwisko">
+                                <input type="text" name="email" placeholder="Adres e-mail">
+
+                                <textarea name="comment" placeholder="Treść komentarza"></textarea>
+
+                                <button class="baton pull-left">
+                                  <span class="icon-rocket"></span>
+                                  Wyślij komentarz</button>
+                            </form>
+
+
+                          </div>
+                      </div> 
+                <!-- comments end -->
             
           </div>
           

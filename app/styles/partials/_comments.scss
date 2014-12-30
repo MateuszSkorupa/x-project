@@ -1,0 +1,142 @@
+@import "_base";
+
+/* komentarze */
+.comments {
+	overflow: hidden;
+	width: 100%;
+	.comments-list {
+		overflow: hidden;
+		width: 100%;
+	}
+}
+.comments-list .inner img {
+	border-radius: 50%;
+	position: absolute;
+	left: -37px;
+	top: -18px;
+	border: 3px solid $tx-col;
+}
+.comments-list .inner .autor {
+	padding-top: 5px;
+	padding-left: 43px;
+}
+.comment {
+	padding-left: 37px;
+	.replay {
+			float: right;
+			text-align: right;
+			margin-top: -10px;
+			@include transition (all 0.250s);
+			span {
+				font-size: 20px;
+			}
+			&:hover {
+				color: #fff;
+			}
+		}
+}
+
+.comment .inner {
+	float: left;
+	background-color: $nx-col;
+	padding: 5px 8px;
+	margin: 30px 0 20px 0;
+	position: relative;
+	color: #fff;
+	.author {
+		list-style: none;
+		margin: 0;
+		padding-bottom: 19px;
+		color: $tx-col;
+		li {
+			display: inline-block;
+			margin-right: 10px;
+			&.written {
+				font-size: 22px;
+				height: 22px;
+			}
+			&.time {
+				overflow: hidden;
+				height: 22px;
+				margin-bottom: -3px;
+				span {
+					float: left;
+					font-size: 22px;
+					&.icon-calendar {
+						margin-right: 3px;
+					}
+					&.value {
+						font-size: 12px;
+					}
+				}
+			}
+		}
+	}
+}
+#respond {
+	width: 100%;
+	overflow: hidden;
+	padding: 30px 0 0 0;
+}
+#commentform {
+	float: left;
+	width: 100%;
+}
+#commentform input {
+	min-width: 180px;
+	float: left;
+	margin: 0 15px 15px 0;
+	padding: 5px 8px;
+}
+#commentform textarea {
+	float: left;
+	height: 200px;
+	width: 100%;
+	margin-bottom: 17px;
+	padding: 5px 8px; 
+}
+#commentform input , #commentform textarea {
+	color: #fff;
+	background: $nx-col;
+	border: 3px solid $nx-col;
+	@include transition(all 0.350s);
+	&:focus {
+		border: 3px solid $tx-col;
+	}
+}
+::-webkit-input-placeholder {
+   color: $bg-col;
+}
+:-moz-placeholder { /* Firefox 18- */
+   color: $bg-col;  
+}
+::-moz-placeholder {  /* Firefox 19+ */
+   color: $bg-col;  
+}
+:-ms-input-placeholder {  
+   color: $bg-col;  
+}
+.comment-awaiting-moderation {
+		float: left;
+		width: 100%;
+		color: $tx-col;
+			p {
+				margin: 5px 0;
+				font-size: 14px;
+				text-transform: uppercase;
+				line-height: 0.9;
+			}
+			span {
+				float: left;
+				margin-right: 5px;
+				font-size: 30px;
+			}
+}
+button {
+	color: #fff;
+	clear: left;
+	text-align: left;
+	background-color: inherit;
+	border: none;
+}
+	

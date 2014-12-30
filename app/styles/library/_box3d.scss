@@ -8,7 +8,10 @@
 }
 .ajaxload > .box3d {
   float: none;
-  margin: 0 auto;
+  margin: 10px auto 0 auto;
+  div {
+    border: 1px solid #fff;
+  }
 }
 .box3d div {
   position: absolute;
