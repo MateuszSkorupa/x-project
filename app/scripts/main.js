@@ -16,6 +16,16 @@ function isMobile() {
   }
 }
 
+function isSafari() {
+  if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) 
+  {
+    return true;
+  }
+ else{
+    return false;
+  }
+}
+
 function removeScrollMe() {
   var $container = $('body');
   var $divs = $container.find('.scrollme');
@@ -180,7 +190,6 @@ function svGrundPortfolio() {
 }
 
 // Parallax effect
-
 (function($) {
 
     (function() {
@@ -248,7 +257,7 @@ function svGrundPortfolio() {
   };
 
   (function loop(){  
-      if(isMobile() === false){
+      if(isMobile() === false && isSafari() === false){
         requestAnimationFrame(loop);
         render();
       }
@@ -382,9 +391,11 @@ $(document).ready(function () {
         return false;
   });
 
-   //nicescroll
-  $('html').niceScroll();
-  $('.scrollable').niceScroll();
+  if(isSafari() === false){
+     //nicescroll
+    $('html').niceScroll();
+    $('.scrollable').niceScroll();
+  }
 
   if(isMobile() === false){
   mLine();

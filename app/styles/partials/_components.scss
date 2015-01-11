@@ -234,7 +234,7 @@ outline: none;
   top: -150px;
   left: 0;
   width: 100%;
-  height: 1500px;
+  height: 1700px;
   -webkit-transform: translateZ(0);
 }
 #slider {
@@ -476,6 +476,8 @@ outline: none;
 			width: 100%;
 			top: -150px;
 			background-image: url(../images/archimedes2.jpg);
+			background-size: cover;
+			background-position: center 30%; 
 			background-repeat: no-repeat;
 		}
 	}
@@ -689,7 +691,6 @@ outline: none;
 	width: 100%;
 	text-align: center;
 	z-index: 1040;
-	color: #fff;
 }
 #single-portfolio-landing {
 	width: 100%;
@@ -782,6 +783,7 @@ outline: none;
 					display: block;
 					color: #fff;
 					font-size: 12px;
+					text-transform: uppercase;
 				}
 				a {
 					color: #fff;
@@ -799,16 +801,33 @@ outline: none;
 		}
 	}
 	.portfolio-content {
-		img {
+		> img ,
+		  .hammy-responsive {
+		  		float: left;
+				max-width: 100%;
+				height: auto;
+				margin-top: 40px;
+				background-color: $bg-col;
+				padding: 25px;
+			}
+		p {
+			float: left;
 			max-width: 100%;
 			margin-top: 40px;
 			background-color: $bg-col;
 			padding: 25px;
-		}
-		p {
-			margin-top: 40px;
-			background-color: $bg-col;
-			padding: 25px;
+			> img ,
+			  .hammy-responsive {
+				max-width: 100%;
+				height: auto;
+				}
+			a {
+				img ,
+				.hammy-responsive {
+				max-width: 100%;
+				height: auto;
+				}
+			}
 		}
 		strong {
 			font-size: 17px;
@@ -879,7 +898,7 @@ outline: none;
 		}
 		h4 {
 		margin: 0 0 25px 0;
-		font-size: 15px;
+		font-size: 16px;
 		}
 	}	
 }
@@ -1033,7 +1052,8 @@ outline: none;
 		float: left;
 		img {
 			width: 225px;
-			margin: 0 20px 0 0;
+			height: auto;
+			margin: 0 20px 20px 0;
 		}
 	}
 	.article-content {
@@ -1076,20 +1096,36 @@ outline: none;
 	}	
 }
 .blog-item-full {
-	img {
+	img ,
+	.hammy-responsive {
 		float: left;
 		width: 100%;
+		height: auto;
 		margin: 0;
 	}
 	.article-content {
 		float: left;
 		width: 100%;
-			img {
+		> img ,
+		  .hammy-responsive {
+		  		margin-top: 20px;
 				max-width: 100%;
-				margin-top: 20px;
-			}
+				height: auto;
+				}	
 			p {
 				margin-top: 20px;
+				img ,
+				.hammy-responsive {
+					max-width: 100%;
+					height: auto;
+					}
+				a {
+					img ,
+					.hammy-responsive {
+					max-width: 100%;
+					height: auto;
+					}
+				}
 			}
 			strong {
 				font-size: 17px;
@@ -1113,12 +1149,14 @@ outline: none;
 					}
 				}
 			}
-			code {
-				float: left;
+			code , pre {
+				display: block;
 				margin-top: 20px;
+				border: none;
 				padding: 15px;
 				background: $tx-col;
 				color: #fff;
+				font-family: 'SourceCodeProSemibold', Helvetica, sans-serif;
 			}
 	}
 	.baton {

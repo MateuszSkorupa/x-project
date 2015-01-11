@@ -395,13 +395,26 @@
 				
 			}
 				.portfolio-content {
-				img {
+				> img ,
+		  		.hammy-responsive{
 					margin-top: 20px;
-					padding: 10px 15px;
+					padding: 15px;
 				}
 				p {
 					margin-top: 20px;
-					padding: 10px 15px;
+					padding: 15px;
+					> img ,
+					  .hammy-responsive {
+						margin-top: 0;
+						padding: 0;
+						}
+					a {
+						img ,
+						.hammy-responsive {
+						margin-top: 0;
+						padding: 0;
+						}
+					}
 				}
 			}
 		}
@@ -465,6 +478,7 @@
 			}
 		}
 		/*BLOG*/
+
 		.witget {
 			#kind-filter.blog {
 				li {
@@ -615,12 +629,27 @@
     	.blog-item {
 			margin-bottom: 15px;
 			.preview {
+				float: none;
 				img {
 			width: 100%;
+			height: auto;
 			margin: 0 0 10px 0;
 					}
 				}
 			}
+		/*COMMENTS*/
+		.comment .inner {
+			.author {
+				li {
+				&.written {
+					font-size: 19px;
+					}
+				}
+			}
+		}
+		.comment-awaiting-moderation p {
+			font-size: 12px;
+		}
     }
 
     /* Custom, iPhone Retina */ 
