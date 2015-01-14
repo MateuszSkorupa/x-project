@@ -31,9 +31,6 @@ function removeScrollMe() {
   var $divs = $container.find('.scrollme');
   $divs.removeClass('scrollme');   
 }
-window.onload = function() {
-  isMobile();
-};
 
 // Menu animation
 function disableLink(){
@@ -368,6 +365,7 @@ $(document).on('click','#gostart', function(e) {
 
 // trigger functions
 $(document).ready(function () {
+  isMobile();
   // AJAX
   $.ajaxSetup({cache:false});
         $('.portfolio-link').click(function(){
