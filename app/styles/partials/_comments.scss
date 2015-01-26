@@ -11,7 +11,7 @@
 	header {
 			a {
 			color: #fff;
-			&:hover {
+			&:hover , &:active {
 				text-decoration: underline;
 			}
 		}
@@ -43,7 +43,7 @@
 			span {
 				font-size: 20px;
 			}
-			&:hover {
+			&:hover , &:active {
 				color: #fff;
 			}
 		}
@@ -92,7 +92,7 @@
 	width: 100%;
 	a {
 		color: #fff;
-		&:hover {
+		&:hover , &:active {
 			text-decoration: underline;
 		}
 	}

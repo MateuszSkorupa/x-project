@@ -1,0 +1,30 @@
+@import "_base";
+
+.main-content {
+	header {
+		h1 {
+			span {
+				float: none;
+				display: block;
+			}
+			.title {
+				font-size: 24px;
+			}
+			.subtitle {
+				color: #fff;
+				font-size: 17px;
+				text-transform: none;
+			}
+		}
+	}
+	.icon-holder {
+		float: left;
+		span {
+			font-size: 36px;
+		}
+	}
+	.text-holder {
+	 	display: block;
+	 	margin-left: 45px;
+	}
+} 

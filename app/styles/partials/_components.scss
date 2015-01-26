@@ -136,10 +136,6 @@ outline: none;
 				text-decoration: none;
 				@include transition-property(all);
   				@include transition-duration(0.550s);
-				&.current,
-				&:hover {
-					color: #fff;
-				}
 			}
 		}
 	}
@@ -149,6 +145,11 @@ outline: none;
 		z-index: 1;
 		> li:hover .hover-menu {
 		display: block;
+		}
+		> li.active > a,
+		> li:hover > a
+		 {
+			color: #fff;
 		}
 	}
 	&.activeted {
@@ -400,7 +401,7 @@ outline: none;
 			font-size: 34px;
 			@include transition(color 0.4s);
 			@include opacity(1);
-			&:hover {
+			&:hover , &:active  {
 				color: $tx-col;
 			}
 			.icon-forward {
@@ -542,7 +543,7 @@ outline: none;
 	font-size: 12px;
 	line-height: 1;
 	@include transition(color 0.3s ease-in);
-	&:hover {
+	&:hover , &:active {
 		color: $bg-col;
 		text-decoration: none;
 	}
@@ -691,6 +692,7 @@ outline: none;
 	width: 100%;
 	text-align: center;
 	z-index: 1040;
+	color: #fff;
 }
 #single-portfolio-landing {
 	width: 100%;
@@ -724,7 +726,7 @@ outline: none;
 			font-size: 60px;
 			color: $nx-col;
 			@include transition(color 0.25s);
-			&:hover {
+			&:hover , &:active {
 				color: $tx-col;
 			}
 		}
@@ -787,7 +789,7 @@ outline: none;
 				}
 				a {
 					color: #fff;
-					&:hover {
+					&:hover , &:active {
 						text-decoration: underline;
 					}
 				}
@@ -836,7 +838,7 @@ outline: none;
 		}
 		a {
 			color: #fff;
-			&:hover {
+			&:hover , &:active {
 				text-decoration: underline;
 			}
 		}
@@ -876,7 +878,7 @@ outline: none;
 	}
 	.baton {
 		color: $bg-col;
-	&:hover {
+	&:hover , &:active {
 		color: #fff;
 		}
 	&:after {
@@ -911,7 +913,7 @@ outline: none;
 	display: none;
 	@include transition(all 0.250s);
 	&.active ,
-	&:hover {
+	&:hover , &:active {
 			color: $tx-col;
 		}
 	p {
@@ -931,7 +933,7 @@ outline: none;
 		cursor: pointer;
 		@include transition(all 0.250s);
 		&.active ,
-		&:hover {
+		&:hover , &:active {
 			background-color: $tx-col;
 			color: #fff;
 		}
@@ -965,7 +967,7 @@ outline: none;
 		cursor: pointer;
 		@include transition(all 0.250s);
 		&.active ,
-		&:hover {
+		&:hover , &:active {
 			background-color: #fff;
 		}
 	}
@@ -984,7 +986,7 @@ outline: none;
 			cursor: pointer;
 			@include transition(all 0.250s);
 			&.active ,
-			&:hover {
+			&:hover , &:active {
 			background-color: #fff;
 			color: $tx-col;
 			}
@@ -1015,7 +1017,7 @@ outline: none;
 			@include transition(all 0.5 ease-in);
 			a {
 				@include transition(all 0.5 ease-in);
-				&:hover {
+				&:hover , &:active {
 				color: #fff;
 				}
 			}
@@ -1075,7 +1077,7 @@ outline: none;
 			}
 			a {
 			color: #fff;
-				&:hover {
+				&:hover , &:active {
 					text-decoration: underline; 
 				}
 			}
@@ -1090,7 +1092,7 @@ outline: none;
 	}
 	.baton {
 		color: #fff;
-		&:hover {
+		&:hover , &:active {
 			color: $bg-col;
 		}
 	}	
@@ -1134,7 +1136,7 @@ outline: none;
 			}
 			a {
 				color: #fff;
-				&:hover {
+				&:hover , &:active {
 					text-decoration: underline;
 				}
 			}
@@ -1162,7 +1164,7 @@ outline: none;
 	.baton {
 		margin-top: 20px;
 		color: #fff;
-			&:hover {
+			&:hover , &:active {
 				color: $bg-col;
 			}
 		}
@@ -1183,7 +1185,7 @@ outline: none;
 			line-height: 40px;
 			@include transition(all 0.250s);
 			&.active,
-			&:hover {
+			&:hover , &:active {
 			color: #fff;
 			background-color: $tx-col;
 			}
@@ -1218,7 +1220,7 @@ outline: none;
 			padding: 0 8px;
 			line-height: 30px;
 			&.active,
-			&:hover {
+			&:hover , &:active {
 			color: $bg-col;
 			background-color: #fff;
 			}
@@ -1231,7 +1233,7 @@ outline: none;
 			padding: 0 5px;
 			line-height: 24px;			
 			&.active,
-			&:hover {
+			&:hover , &:active {
 			color: $tx-col;
 			background-color: #fff;
 					}
@@ -1243,7 +1245,7 @@ outline: none;
 				display: inline;
 				font-size: 14px;
 				line-height: 0;
-				&:hover {
+				&:hover , &:active {
 					background-color: $nx-col;
 				}
 				a {
@@ -1253,7 +1255,7 @@ outline: none;
 				color: #fff;
 				line-height: 1.2;			
 				&.active,
-				&:hover {
+				&:hover , &:active {
 				color: $tx-col;
 						}
 					}
@@ -1270,7 +1272,7 @@ outline: none;
 		text-transform: uppercase;
 		color: $nx-col;
 		@include transition(all 0.250s);
-		&:hover {
+		&:hover , &:active {
 			color: $tx-col;
 		}
 		span {
