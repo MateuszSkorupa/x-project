@@ -72,49 +72,59 @@ function disableLink(element){
   e.preventDefault();
   }); 
 }
-function checkForActive(elementId, activeClass) {
-  var items = $('#'+ elementId).find($('.' + activeClass));
-  if (items !== null){
-    return true;
-  }else{
-    return false;
-  }
-}
+// function checkForActive(listID, activeClass) {
+//   var items = $('#'+ listID).find($('.' + activeClass));
+//   if (!items){
+//     return null;
+//   }else{
+//     return true;
+//   }
+// }
 function mLine(listID, activeClass) {
   var mainNav = document.getElementById(listID);
   var span = document.createElement('span');
   var magicLine = document.getElementById('magic-line');
 
+  // make magic line
   if(!magicLine){
     span.setAttribute('id', 'magic-line');
     mainNav.appendChild(span);
   }
   var $magicLine = $('#magic-line');
+
   // get menu li's objects
   var $menuElements = $('#' + listID + ' > li' );
+  // get index of active li
   var $activeIndex = $menuElements.index($('.' + activeClass));
-
+  // cache array of li positions
   var $positionElements = $menuElements.map( function (){
    return $( this ).position().left;
   });
-
+  // cache array of li widths
   var $widthElements = $menuElements.map( function (){
     return $( this ).width();
   });
-
-  if (checkForActive(listID, activeClass) === true) {
-    $magicLine.width($widthElements[$activeIndex]);
-    $magicLine.css('left', $positionElements[$activeIndex]);
+ 
+  // magic line starting dimensions
+  function startLine() {
+      if ($activeIndex === -1) {
+        $magicLine.width('0px');
+        $magicLine.css('left', '0px');
+      }else{
+      $magicLine.width($widthElements[$activeIndex]);
+      $magicLine.css('left', $positionElements[$activeIndex]);
+     }
   }
-
+  startLine();
+  
   $menuElements.hover(function(){
     $magicLine.width($widthElements[$(this).index()]);
     $magicLine.css('left', $positionElements[$(this).index()]);
   }, 
   function(){
-    $magicLine.width($widthElements[$activeIndex]);
-    $magicLine.css('left', $positionElements[$activeIndex]);
-  });
+    startLine();
+  }
+  );
 
   $menuElements.click(function(){
     $menuElements.each( function(){
@@ -144,12 +154,10 @@ function blogyFilters(){
   });
 }
 // Short script to encode our SVG in base64
-function svGrund() {
+function svGrund(elementId) {
   
   // This can be reversed using window.atob('base64')
-  var bgSvg = document.getElementById('bgsvg');
-  var bgSvgnx = document.getElementById('bgsvgnx');
-  
+  var bgSvg = document.getElementById(elementId);
   var svg = document.getElementsByTagName('svg')[0];
 
   if(!svg){ 
@@ -169,37 +177,6 @@ function svGrund() {
       bgSvg.style.backgroundImage = url;
     }
 
-    if(bgSvgnx === null){
-      return null;
-    }else{
-      bgSvgnx.style.backgroundImage = url;
-    }
-  }
- 
-}
-function svGrundPortfolio() {
-  
-  // This can be reversed using window.atob('base64')
-  var bgSvgPortfolio = document.getElementById('bgsvgportfolio');
-  
-  var svg = document.getElementsByTagName('svg')[0];
-
-  if(!svg){ 
-    return null; 
-  }else{
-    // Convert the SVG node to HTML
-    var div = document.createElement('div');
-    div.appendChild(svg.cloneNode(true));
-
-    // Encode the SVG as base64
-    var b64 = 'data:image/svg+xml;base64,'+window.btoa(div.innerHTML);
-    var url = 'url("' + b64 + '")';
-
-    if(bgSvgPortfolio === null){
-      return null;
-    }else{
-      bgSvgPortfolio.style.backgroundImage = url;
-    }
   }
  
 }
@@ -400,7 +377,7 @@ $(document).ready(function () {
                 '<div class="p6"></div>' +
               '</div></div>');
             $('#single-portfolio-landing').load(portfolioLink, function() {
-              svGrundPortfolio();
+              svGrund('bgsvgportfolio');
             }
               );
 
@@ -415,7 +392,8 @@ $(document).ready(function () {
 
   if(isMobile() === false){
   mLine('menu', 'active');
-  svGrund();
+  svGrund('bgsvg');
+  svGrund('bgsvgnx');
   }
   if(isMobile() === true){
     removeScrollMe();
