@@ -1,5 +1,10 @@
 @import "_base";
-
+.no-fontface {
+	[class^="icon-"], [class*=" icon-"] {
+		background: url('../images/mute.png') no-repeat;
+		background-size: cover;
+	}
+}
 
 /*==================================================
 =            Bootstrap 3 Media Queries             =
@@ -590,7 +595,9 @@
     			}
     		}
     	}
-
+		.click-or-hover {
+			@include animation(none);
+		}
     	/*PORTFOLIO*/
 		#single-portfolio-container {
 			.portfolio-thumbnail {

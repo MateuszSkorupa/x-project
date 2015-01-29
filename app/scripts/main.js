@@ -49,7 +49,7 @@ function WHCheckCookies() {
     if(WHReadCookie('cookies_accepted') != 'T') {
         var message_container = document.createElement('div');
         message_container.id = 'cookies-message-container';
-        var html_code = '<div id="cookies-message" style="padding: 10px 0px; font-size: 14px; line-height: 30px; text-align: center; position: fixed; bottom: 0px; border-top: 1px solid #ff5335; background-color: #3a424c; width: 100%; z-index: 9999;">Ta strona używa ciasteczek (cookies), dzięki którym może działać lepiej. <a href="http://wszystkoociasteczkach.pl" style="text-decoration: underline" target="_blank">Dowiedz się więcej</a><a href="javascript:WHCloseCookiesWindow();" id="accept-cookies-checkbox" name="accept-cookies" style="background-color: #04c461; padding: 5px 10px; color: #FFF; border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; display: inline-block; margin-left: 10px; text-decoration: none; cursor: pointer;">Rozumiem</a></div>';
+        var html_code = '<div id="cookies-message" style="padding: 10px 0px; font-size: 14px; line-height: 30px; text-align: center; position: fixed; bottom: 0px; border-top: 1px solid #ff5335; background-color: #1d181f; width: 100%; z-index: 9999;">Ta strona używa ciasteczek (cookies), dzięki którym może działać lepiej. <a href="http://wszystkoociasteczkach.pl" style="text-decoration: underline" target="_blank">Dowiedz się więcej</a><a href="javascript:WHCloseCookiesWindow();" id="accept-cookies-checkbox" name="accept-cookies" style="background-color: #04c461; padding: 5px 10px; color: #FFF; border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; display: inline-block; margin-left: 10px; text-decoration: none; cursor: pointer;">Rozumiem</a></div>';
         message_container.innerHTML = html_code;
         document.body.appendChild(message_container);
     }
@@ -258,29 +258,56 @@ function svGrund(elementId) {
 })(jQuery);
 
 //info box
+// function clickOrHover(){
+//       var $front = $('div.inner.front');
+      
+//       $front.hover(function(){
+//         $(this).addClass('active');
+//         $(this).parent().find('.click-or-hover').addClass('hidden');
+//       },function(){
+//         $(this).removeClass('active');
+//          $(this).parent().find('.click-or-hover').removeClass('hidden');
+//       });
+
+//       $front.click(
+//         function(){
+//           if($(this).hasClass('active') === true){
+//             $(this).removeClass('active');
+//              $(this).parent().find('.click-or-hover').removeClass('hidden');
+//           }else{
+//             $(this).addClass('active');
+//             $(this).parent().find('.click-or-hover').addClass('hidden');
+//           }
+//         });
+//     }
 function clickOrHover(){
       var $front = $('div.inner.front');
-      
-      $front.hover(function(){
-        $(this).addClass('active');
-        $(this).parent().find('.click-or-hover').addClass('hidden');
+      var visable = false;
+      $front
+      .css({'opacity':'0', 'z-index':'0'})
+      .hover(function(){
+        $(this).fadeTo('fast', 1.0);
+        $(this).parent().find('.click-or-hover').fadeTo('fast', 0.1);
+        visable = true;
       },function(){
-        $(this).removeClass('active');
-         $(this).parent().find('.click-or-hover').removeClass('hidden');
+        $(this).fadeTo('fast', 0);
+         $(this).parent().find('.click-or-hover').fadeTo('fast', 1.0);
+         visable = false;
       });
 
       $front.click(
         function(){
-          if($(this).hasClass('active') === true){
-            $(this).removeClass('active');
-             $(this).parent().find('.click-or-hover').removeClass('hidden');
-          }else{
-            $(this).addClass('active');
-            $(this).parent().find('.click-or-hover').addClass('hidden');
-          }
-        });
+          if(visable) {
+            $(this).fadeTo('fast', 0);
+            $(this).parent().find('.click-or-hover').fadeTo('fast', 1.0);
+            visable = false;  
+          } else {
+            $(this).fadeTo('fast', 1.0);
+            $(this).parent().find('.click-or-hover').fadeTo('fast', 0.1);
+            visable = true;
+          }        
+        });  
     }
-
 // sprite photo
 var first = true;
 function spritePhoto(){
