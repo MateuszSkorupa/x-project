@@ -209,12 +209,12 @@
     	/*PARALLAX*/
 		.plx-w {
 			#bgsvgnx {
-				top: -450px;
+				top: -700px;
 			}
 			&.archimedes {
 				.plx-item {
 				height: 850px;
-				top: -400px;
+				top: -700px;
 				background: url(../images/archimedes2.jpg) no-repeat;
 				background-size: cover;
 				background-position: center center; 
@@ -223,7 +223,7 @@
 			&.design {
 				.plx-item {
 				height: 850px;
-				top: -400px;
+				top: -700px;
 				background: url(../images/design2.jpg) no-repeat;
 				background-size: cover;
 				background-position: center center; 
@@ -232,7 +232,7 @@
 			&.constructor {
 				.plx-item {
 				height: 850px;
-				top: -400px;
+				top: -700px;
 				background: url(../images/constructor2.jpg) no-repeat;
 				background-size: cover;
 				background-position: center 10%; 
@@ -382,11 +382,14 @@
 
 		/*PARALLAX*/
 		.plx-w {
+			#bgsvgnx {
+				top: -700px;
+			}
 			&.archimedes {
 				height: 400px;
 				.plx-item {
 				height: 750px;
-				top: -250px;
+				top: -700px;
 				background: url(../images/archimedes2.jpg) no-repeat;
 				background-size: cover;
 				background-position: center center; 
@@ -396,7 +399,7 @@
 				height: 400px;
 				.plx-item {
 				height: 750px;
-				top: -250px;
+				top: -700px;
 				background: url(../images/design2.jpg) no-repeat;
 				background-size: cover;
 				background-position: center center; 
@@ -406,7 +409,7 @@
 				height: 400px;
 				.plx-item {
 				height: 750px;
-				top: -250px;
+				top: -700px;
 				background: url(../images/constructor2.jpg) no-repeat;
 				background-size: cover;
 				background-position: center 10%; 
