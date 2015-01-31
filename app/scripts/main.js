@@ -121,11 +121,10 @@ function mLine(listID, activeClass) {
   }, 
   function(){
     startLine();
-  }
-  );
+  });
 
   $menuElements.click(function(){
-    $menuElements.each( function(){
+    $menuElements.each(function(){
       $menuElements.removeClass(activeClass);
     });
     $( this ).addClass(activeClass);
@@ -281,7 +280,8 @@ function clickOrHover(){
       var $front = $('div.inner.front');
       var visable = false;
       $front.css({'opacity':'0', 'z-index':'0'});
-      if ( !isMobile ) {
+      if ( !isMobile || !(Modernizr.touch)) {
+        //console.log(Modernizr.touch);
       $front.hover(function(){
         $(this).fadeTo('fast', 0.9);
         $(this).parent().find('.click-or-hover').fadeTo('fast', 0.1);

@@ -208,6 +208,38 @@
     	}
     	/*PARALLAX*/
 		.plx-w {
+			#bgsvgnx {
+				top: -450px;
+			}
+			&.archimedes {
+				.plx-item {
+				height: 850px;
+				top: -400px;
+				background: url(../images/archimedes2.jpg) no-repeat;
+				background-size: cover;
+				background-position: center center; 
+			}
+		}
+			&.design {
+				.plx-item {
+				height: 850px;
+				top: -400px;
+				background: url(../images/design2.jpg) no-repeat;
+				background-size: cover;
+				background-position: center center; 
+			}
+		}
+			&.constructor {
+				.plx-item {
+				height: 850px;
+				top: -400px;
+				background: url(../images/constructor2.jpg) no-repeat;
+				background-size: cover;
+				background-position: center 10%; 
+				}
+			}
+		}
+		.plx-w {
 			.txt {
 			width: 59%;
 				h3 {	
@@ -354,7 +386,7 @@
 				height: 400px;
 				.plx-item {
 				height: 750px;
-				top: -150px;
+				top: -250px;
 				background: url(../images/archimedes2.jpg) no-repeat;
 				background-size: cover;
 				background-position: center center; 
@@ -364,7 +396,7 @@
 				height: 400px;
 				.plx-item {
 				height: 750px;
-				top: -150px;
+				top: -250px;
 				background: url(../images/design2.jpg) no-repeat;
 				background-size: cover;
 				background-position: center center; 
@@ -374,7 +406,7 @@
 				height: 400px;
 				.plx-item {
 				height: 750px;
-				top: -150px;
+				top: -250px;
 				background: url(../images/constructor2.jpg) no-repeat;
 				background-size: cover;
 				background-position: center 10%; 
