@@ -212,27 +212,30 @@
 				top: -700px;
 			}
 			&.archimedes {
+				height: 360px;
 				.plx-item {
 				height: 1000px;
-				top: -700px;
+				top: -650px;
 				background: url(../images/archimedes2.jpg) no-repeat;
 				background-size: cover;
 				background-position: center center; 
 			}
 		}
 			&.design {
+				height: 360px;
 				.plx-item {
-				height: 1000px;
-				top: -630px;
+				height: 950px;
+				top: -650px;
 				background: url(../images/design2.jpg) no-repeat;
 				background-size: cover;
 				background-position: center center; 
 			}
 		}
 			&.constructor {
+				height: 360px;
 				.plx-item {
-				height: 1000px;
-				top: -630px;
+				height: 950px;
+				top: -650px;
 				background: url(../images/constructor2.jpg) no-repeat;
 				background-size: cover;
 				background-position: center 10%; 
