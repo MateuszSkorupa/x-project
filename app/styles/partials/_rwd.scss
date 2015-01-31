@@ -213,7 +213,7 @@
 			}
 			&.archimedes {
 				.plx-item {
-				height: 850px;
+				height: 1000px;
 				top: -700px;
 				background: url(../images/archimedes2.jpg) no-repeat;
 				background-size: cover;
@@ -222,8 +222,8 @@
 		}
 			&.design {
 				.plx-item {
-				height: 850px;
-				top: -700px;
+				height: 1000px;
+				top: -630px;
 				background: url(../images/design2.jpg) no-repeat;
 				background-size: cover;
 				background-position: center center; 
@@ -231,8 +231,8 @@
 		}
 			&.constructor {
 				.plx-item {
-				height: 850px;
-				top: -700px;
+				height: 1000px;
+				top: -630px;
 				background: url(../images/constructor2.jpg) no-repeat;
 				background-size: cover;
 				background-position: center 10%; 
@@ -381,41 +381,41 @@
 		}
 
 		/*PARALLAX*/
-		.plx-w {
-			#bgsvgnx {
-				top: -700px;
-			}
-			&.archimedes {
-				height: 400px;
-				.plx-item {
-				height: 750px;
-				top: -700px;
-				background: url(../images/archimedes2.jpg) no-repeat;
-				background-size: cover;
-				background-position: center center; 
-			}
-		}
-			&.design {
-				height: 400px;
-				.plx-item {
-				height: 750px;
-				top: -700px;
-				background: url(../images/design2.jpg) no-repeat;
-				background-size: cover;
-				background-position: center center; 
-			}
-		}
-			&.constructor {
-				height: 400px;
-				.plx-item {
-				height: 750px;
-				top: -700px;
-				background: url(../images/constructor2.jpg) no-repeat;
-				background-size: cover;
-				background-position: center 10%; 
-				}
-			}
-		}
+		// .plx-w {
+		// 	#bgsvgnx {
+		// 		top: -700px;
+		// 	}
+		// 	&.archimedes {
+		// 		height: 400px;
+		// 		.plx-item {
+		// 		height: 750px;
+		// 		top: -700px;
+		// 		background: url(../images/archimedes2.jpg) no-repeat;
+		// 		background-size: cover;
+		// 		background-position: center center; 
+		// 	}
+		// }
+		// 	&.design {
+		// 		height: 400px;
+		// 		.plx-item {
+		// 		height: 750px;
+		// 		top: -700px;
+		// 		background: url(../images/design2.jpg) no-repeat;
+		// 		background-size: cover;
+		// 		background-position: center center; 
+		// 	}
+		// }
+		// 	&.constructor {
+		// 		height: 400px;
+		// 		.plx-item {
+		// 		height: 750px;
+		// 		top: -700px;
+		// 		background: url(../images/constructor2.jpg) no-repeat;
+		// 		background-size: cover;
+		// 		background-position: center 10%; 
+		// 		}
+		// 	}
+		// }
 		.plx-w {
 			.txt {
 			width: 440px;
