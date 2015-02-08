@@ -70,68 +70,232 @@ function disableLink(element){
   e.preventDefault();
   }); 
 }
-// function checkForActive(listID, activeClass) {
-//   var items = $('#'+ listID).find($('.' + activeClass));
-//   if (!items){
-//     return null;
-//   }else{
-//     return true;
+// function magicLineMenu(listID, activeClass) {
+//   var mainNav = document.getElementById(listID);
+//   var span = document.createElement('span');
+//   var magicLineItem = document.getElementById('magic-line');
+//   // create magic line html item
+//   if(!magicLineItem){
+//     span.setAttribute('id', 'magic-line');
+//     mainNav.appendChild(span);
 //   }
+//   var MagicLine = function (width, position) {
+//     this.lineWidth = width;
+//     this.linePosition = position;
+//   };
+
+//   var liList = {
+//     liListObjects: $('#' + listID + ' > li'),
+//   };
+
+//   function getWidth () {
+//     $(this).width();
+//   }
+
+//   function getPosition() {
+//     $(this).position().left;
+//   }
+//      liListObjects.hover(function(){
+//       var width = getWidth();
+//       var position = getPosition();
+     
+//     }, function(){
+     
+//     });
 // }
-function mLine(listID, activeClass) {
-  var mainNav = document.getElementById(listID);
-  var span = document.createElement('span');
-  var magicLine = document.getElementById('magic-line');
-
-  // make magic line
-  if(!magicLine){
-    span.setAttribute('id', 'magic-line');
-    mainNav.appendChild(span);
-  }
-  var $magicLine = $('#magic-line');
-
-  // get menu li's objects
-  var $menuElements = $('#' + listID + ' > li' );
-  // get index of active li
-  var $activeIndex = $menuElements.index($('.' + activeClass));
-  // cache array of li positions
-  var $positionElements = $menuElements.map( function (){
-   return $( this ).position().left;
-  });
-  // cache array of li widths
-  var $widthElements = $menuElements.map( function (){
-    return $( this ).width();
-  });
- 
-  // magic line starting dimensions
-  function startLine() {
-      if ($activeIndex === -1) {
-        $magicLine.width('0px');
-        $magicLine.css('left', '0px');
-      }else{
-      $magicLine.width($widthElements[$activeIndex]);
-      $magicLine.css('left', $positionElements[$activeIndex]);
+function magicLineMenu(listID, activeClass) {
+   var magicLine = {
+      lineWidth: 0,
+      linePosition: 0,
+      changeDimensions: function (width, position) {
+        this.lineWidth = width;
+        this.linePosition = position;
+      },
+      startMagicLine: function () {
+        var span = document.createElement('span');
+        span.setAttribute('id', 'magic-line');
+        liList.listContainer.appendChild(span);
+      },
+      printMagicLineFirst: function () {
+        this.itemItSelf.width(liList.activeWidth);
+        this.itemItSelf.css('left', liList.activePosition);
+      },
+      printMagicLine: function () {
+        this.itemItSelf.width(magicLine.lineWidth);
+        this.itemItSelf.css('left', magicLine.linePosition);
+      }
+   };
+   var liList = {
+      activeWidth: 0,
+      activePosition: 0,
+      liListObjects: $('#' + listID + ' > li'), 
+      findlistContainer: function (listID) {
+        this.listContainer = document.getElementById(listID);
+      },
+      isActive: function () {
+        if(this.liListObjects.hasClass(activeClass)){
+           this.activeWidth = $('.'+ activeClass).width();
+           this.activePosition = $('.'+ activeClass).position().left;
+          return true;
+        }else{
+          return false;
+        }
      }
-  }
-  startLine();
-  
-  $menuElements.hover(function(){
-    $magicLine.width($widthElements[$(this).index()]);
-    $magicLine.css('left', $positionElements[$(this).index()]);
-  }, 
-  function(){
-    startLine();
-  });
+   };
 
-  $menuElements.click(function(){
-    $menuElements.each(function(){
-      $menuElements.removeClass(activeClass);
+   liList.findlistContainer(listID);
+   liList.isActive();  
+   magicLine.startMagicLine();
+   magicLine.itemItSelf = $('#magic-line');
+   magicLine.printMagicLineFirst();
+   var liListObject = liList.liListObjects;
+   
+   liListObject.hover(function(){
+      var width = $(this).width();
+      var position = $(this).position().left;
+      magicLine.changeDimensions(width, position);
+      magicLine.printMagicLine();
+    }, function(){
+      magicLine.printMagicLineFirst();
     });
-    $( this ).addClass(activeClass);
-    $activeIndex = $menuElements.index($('.' + activeClass));
+   liListObject.click(function(){
+    liListObject.each(function(){
+      liListObject.removeClass(activeClass);
+    });
+    $(this).addClass(activeClass); 
+    liList.isActive();  
   });
-
 }
+
+// function magicLineMenu(listID, activeClass) {
+//   var mainNav = document.getElementById(listID);
+//   var span = document.createElement('span');
+//   var magicLineItem = document.getElementById('magic-line');
+
+//   // create magic line html item
+//   if(!magicLineItem){
+//     span.setAttribute('id', 'magic-line');
+//     mainNav.appendChild(span);
+//   }
+//   // get that magic line
+//   var $magicLine = $('#magic-line');
+//   // get menu li's objects
+//   var $menuElements = $('#' + listID + ' > li' );
+
+//   // get index of active li
+//   var $activeIndex = $menuElements.index($('.' + activeClass));
+//   //     $magicLine.width($widthElements[$(this).index()]);
+
+//   // cache array of li positions
+//   var $positionElements = $menuElements.map( function (){
+//    return $( this ).position().left;
+//   });
+
+//   // cache array of li widths
+//   var $widthElements = $menuElements.map( function (){
+//     return $( this ).width();
+//   });
+//   // construct magicLine object 
+//   var magicLine = {
+//     lineWidth: 0,
+//     linePosition: 0,
+//     updateDimensions: function (newWidth, newPosition) {
+//       this.lineWidth = newWidth;
+//       this.linePosition = newPosition;
+//     }
+//   };
+//   function printMagicLine () {
+//     $magicLine.width(magicLine.lineWidth);
+//     $magicLine.css('left', magicLine.linePosition);
+//   }
+
+//   function getStartLine () {
+//     var newWidth, newPosition 
+//      if($activeIndex === -1){
+//       newWidth = 0;
+//       newPosition = 0;
+//      }else{
+//       newWidth = $widthElements[$activeIndex];
+//       newPosition = $positionElements[$activeIndex];
+//     }
+//     magicLine.updateDimensions(newWidth, newPosition);
+//     printMagicLine();
+//   }
+//   getStartLine();
+
+//   $menuElements.hover(function(){
+
+//     var newWidth = $widthElements[$(this).index()];
+//     var newPosition = $positionElements[$(this).index()];
+
+//     magicLine.updateDimensions(newWidth, newPosition);
+//     printMagicLine();
+//   }, function(){
+//       getStartLine();
+//   });
+//   $menuElements.click(function(){
+//     $menuElements.each(function(){
+//       $menuElements.removeClass(activeClass);
+//     });
+//     $( this ).addClass(activeClass);
+//     $activeIndex = $menuElements.index($('.' + activeClass));
+//   });
+
+// }
+// function mLine(listID, activeClass) {
+//   var mainNav = document.getElementById(listID);
+//   var span = document.createElement('span');
+//   var magicLine = document.getElementById('magic-line');
+
+//   // make magic line
+//   if(!magicLine){
+//     span.setAttribute('id', 'magic-line');
+//     mainNav.appendChild(span);
+//   }
+//   var $magicLine = $('#magic-line');
+
+//   // get menu li's objects
+//   var $menuElements = $('#' + listID + ' > li' );
+//   // get index of active li
+//   var $activeIndex = $menuElements.index($('.' + activeClass));
+//   // cache array of li positions
+//   var $positionElements = $menuElements.map( function (){
+//    return $( this ).position().left;
+//   });
+//   // cache array of li widths
+//   var $widthElements = $menuElements.map( function (){
+//     return $( this ).width();
+//   });
+ 
+//   // magic line starting dimensions
+//   function startLine() {
+//       if ($activeIndex === -1) {
+//         $magicLine.width('0px');
+//         $magicLine.css('left', '0px');
+//       }else{
+//       $magicLine.width($widthElements[$activeIndex]);
+//       $magicLine.css('left', $positionElements[$activeIndex]);
+//      }
+//   }
+//   startLine();
+  
+//   $menuElements.hover(function(){
+//     $magicLine.width($widthElements[$(this).index()]);
+//     $magicLine.css('left', $positionElements[$(this).index()]);
+//   }, 
+//   function(){
+//     startLine();
+//   });
+
+//   $menuElements.click(function(){
+//     $menuElements.each(function(){
+//       $menuElements.removeClass(activeClass);
+//     });
+//     $( this ).addClass(activeClass);
+//     $activeIndex = $menuElements.index($('.' + activeClass));
+//   });
+
+// }
 
 // mobile menu
 function mMenu(){
@@ -158,7 +322,7 @@ function svGrund(elementId) {
   var svg = document.getElementsByTagName('svg')[0];
 
   if(!svg){ 
-    return null; 
+    return false; 
   }else{
     // Convert the SVG node to HTML
     var div = document.createElement('div');
@@ -168,8 +332,8 @@ function svGrund(elementId) {
     var b64 = 'data:image/svg+xml;base64,'+window.btoa(div.innerHTML);
     var url = 'url("' + b64 + '")';
 
-    if(bgSvg === null){
-      return null;
+    if(bgSvg === false){
+      return false;
     }else{
       bgSvg.style.backgroundImage = url;
     }
@@ -415,7 +579,8 @@ $(document).ready(function () {
   }
 
   if ( !isMobile ) {
-  mLine('menu', 'active');
+  //mLine('menu', 'active');
+  magicLineMenu('menu', 'active');
   svGrund('bgsvg');
   svGrund('bgsvgnx');
   }
@@ -486,7 +651,7 @@ $(document).ready(function () {
 });
 $(window).resize(function(){
   if ( !isMobile ) {
-  mLine('menu', 'active');
+  magicLineMenu('menu', 'active');
   }
 }); 
 

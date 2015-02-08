@@ -165,7 +165,7 @@ outline: none;
 .hover-menu {
 	width: 100%;
 		position: absolute;
-		top: 61px;
+		top: 60px;
 		display: none;
 		background: $bg-col;
 		border-top: 1px solid $tx-col;
@@ -176,7 +176,6 @@ outline: none;
   			@include transition-duration(0.250s);
 			&:hover {
 				background: $tx-col;
-			
 			}
 			&:hover a {
 				color: $bg-col;
